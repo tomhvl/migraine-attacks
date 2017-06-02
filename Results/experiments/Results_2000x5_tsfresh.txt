@@ -1,0 +1,2202 @@
+
+
+
+
+
+
+
+
+lagged allx1, Standard
+
+
+
+
+
+
+pre/post: 5/0  win/stride: 2000/5  label:start 
+filename: stm_sb_modified.csv (feature set prepared earlier) 
+datetime: 2017-04-23 14:06:37.587000 
+pca_target: 0 	 poly degree: 0 	 kselect: 0 
+Imbalance: None 
+Extended target (count):  31485 13
+('Total : Processed (count): ', (5897L, 438L), 15)
+Final feature (count):  (5897L, 438L)
+Running GridSearchCV for GaussianNB.
+Fitting 5 folds for each of 1 candidates, totalling 5 fits
+BEST: GaussianNB(priors=None)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.508 	0.014 	0.001 	0.587 	0.582 	0.344
+[[897 870]
+ [  1   2]]
+             precision    recall  f1-score   support
+
+          0       1.00      0.51      0.67      1767
+          1       0.00      0.67      0.00         3
+
+avg / total       1.00      0.51      0.67      1770
+
+
+Running GridSearchCV for LogisticRegression.
+Fitting 5 folds for each of 450 candidates, totalling 2250 fits
+BEST: LogisticRegression(C=5, class_weight={1: 3}, dual=False, fit_intercept=True,
+          intercept_scaling=1, max_iter=100, multi_class='ovr', n_jobs=4,
+          penalty='l2', random_state=None, solver='liblinear', tol=0.0001,
+          verbose=0, warm_start=False)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.995 	-0.002 	-0.002 	0.498 	0.000 	0.000
+[[1761    6]
+ [   3    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1767
+          1       0.00      0.00      0.00         3
+
+avg / total       1.00      0.99      1.00      1770
+
+
+Running GridSearchCV for SGDClassifier.
+Fitting 5 folds for each of 2700 candidates, totalling 13500 fits
+BEST: SGDClassifier(alpha=0.1, average=False, class_weight={1: 50}, epsilon=0.1,
+       eta0=0.5, fit_intercept=True, l1_ratio=0.15,
+       learning_rate='invscaling', loss='modified_huber', n_iter=5,
+       n_jobs=4, penalty='elasticnet', power_t=0.5, random_state=None,
+       shuffle=True, verbose=0, warm_start=False)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.968 	-0.007 	-0.003 	0.485 	0.000 	0.000
+[[1714   53]
+ [   3    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      0.97      0.98      1767
+          1       0.00      0.00      0.00         3
+
+avg / total       1.00      0.97      0.98      1770
+
+
+Running GridSearchCV for ExtraTreesClassifier.
+Fitting 5 folds for each of 360 candidates, totalling 1800 fits
+BEST: ExtraTreesClassifier(bootstrap=False, class_weight={1: 15},
+           criterion='entropy', max_depth=16, max_features='auto',
+           max_leaf_nodes=None, min_impurity_split=1e-07,
+           min_samples_leaf=1, min_samples_split=2,
+           min_weight_fraction_leaf=0.0, n_estimators=15, n_jobs=4,
+           oob_score=False, random_state=None, verbose=0, warm_start=False)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.998 	-0.001 	-0.001 	0.500 	0.000 	0.000
+[[1766    1]
+ [   3    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1767
+          1       0.00      0.00      0.00         3
+
+avg / total       1.00      1.00      1.00      1770
+
+
+Running GridSearchCV for RandomForestClassifier.
+Fitting 5 folds for each of 360 candidates, totalling 1800 fits
+BEST: RandomForestClassifier(bootstrap=True, class_weight={1: 3}, criterion='gini',
+            max_depth=8, max_features=0.33, max_leaf_nodes=None,
+            min_impurity_split=1e-07, min_samples_leaf=1,
+            min_samples_split=2, min_weight_fraction_leaf=0.0,
+            n_estimators=15, n_jobs=4, oob_score=False, random_state=None,
+            verbose=0, warm_start=False)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.998 	-0.001 	-0.001 	0.500 	0.000 	0.000
+[[1766    1]
+ [   3    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1767
+          1       0.00      0.00      0.00         3
+
+avg / total       1.00      1.00      1.00      1770
+
+
+Running GridSearchCV for MLPClassifier.
+Fitting 5 folds for each of 48 candidates, totalling 240 fits
+BEST: MLPClassifier(activation='tanh', alpha=0.001, batch_size='auto', beta_1=0.9,
+       beta_2=0.999, early_stopping=False, epsilon=1e-08,
+       hidden_layer_sizes=(500,), learning_rate='invscaling',
+       learning_rate_init=0.001, max_iter=200, momentum=0.9,
+       nesterovs_momentum=True, power_t=0.5, random_state=None,
+       shuffle=True, solver='lbfgs', tol=0.0001, validation_fraction=0.1,
+       verbose=False, warm_start=False)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.994 	-0.003 	-0.002 	0.498 	0.000 	0.000
+[[1760    7]
+ [   3    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1767
+          1       0.00      0.00      0.00         3
+
+avg / total       1.00      0.99      1.00      1770
+
+
+Running GridSearchCV for AdaBoostClassifier.
+Fitting 5 folds for each of 576 candidates, totalling 2880 fits
+BEST: AdaBoostClassifier(algorithm='SAMME.R',
+          base_estimator=DecisionTreeClassifier(class_weight={1: 500}, criterion='entropy',
+            max_depth=8, max_features=None, max_leaf_nodes=None,
+            min_impurity_split=1e-07, min_samples_leaf=1,
+            min_samples_split=2, min_weight_fraction_leaf=0.0,
+            presort=False, random_state=None, splitter='random'),
+          learning_rate=0.5, n_estimators=15, random_state=None)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.998 	-0.001 	-0.001 	0.500 	0.000 	0.000
+[[1766    1]
+ [   3    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1767
+          1       0.00      0.00      0.00         3
+
+avg / total       1.00      1.00      1.00      1770
+
+
+Running GridSearchCV for SVC.
+Fitting 5 folds for each of 160 candidates, totalling 800 fits
+BEST: SVC(C=0.01, cache_size=200, class_weight='balanced', coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma=0.1, kernel='rbf',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.992 	-0.003 	-0.003 	0.497 	0.000 	0.000
+[[1756   11]
+ [   3    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      0.99      1.00      1767
+          1       0.00      0.00      0.00         3
+
+avg / total       1.00      0.99      0.99      1770
+
+
+Running GridSearchCV for VotingClassifier.
+Fitting 5 folds for each of 216 candidates, totalling 1080 fits
+BEST: VotingClassifier(estimators=[('lr', LogisticRegression(C=0.1, class_weight={1: 500}, dual=False,
+          fit_intercept=True, intercept_scaling=1, max_iter=100,
+          multi_class='ovr', n_jobs=4, penalty='l2', random_state=None,
+          solver='liblinear', tol=0.0001, verbose=0, warm_start=False)), ('rf', Ran...wski',
+           metric_params=None, n_jobs=4, n_neighbors=4, p=2,
+           weights='distance'))],
+         n_jobs=4, voting='soft', weights=[1, 1, 1])
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.997 	-0.001 	-0.001 	0.499 	0.000 	0.000
+[[1765    2]
+ [   3    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1767
+          1       0.00      0.00      0.00         3
+
+avg / total       1.00      1.00      1.00      1770
+
+
+Running GridSearchCV for KNeighborsClassifier.
+Fitting 5 folds for each of 96 candidates, totalling 480 fits
+BEST: KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski',
+           metric_params=None, n_jobs=4, n_neighbors=1, p=1,
+           weights='distance')
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.996 	-0.002 	-0.002 	0.499 	0.000 	0.000
+[[1763    4]
+ [   3    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1767
+          1       0.00      0.00      0.00         3
+
+avg / total       1.00      1.00      1.00      1770
+
+
+                estimator    min_score mean_score  max_score   sd_score  \
+0              GaussianNB    0.0379653  0.0379653  0.0379653          0   
+3    ExtraTreesClassifier   -0.0011073   0.142607   0.372095  0.0752511   
+4  RandomForestClassifier -0.000906498  0.0183604   0.256681  0.0451613   
+6      AdaBoostClassifier  -0.00498611  0.0863845   0.372095  0.0845199   
+8        VotingClassifier   -0.0011073  0.0524045   0.256338  0.0656564   
+9    KNeighborsClassifier  -0.00236305  0.0173714   0.187082  0.0497859   
+1      LogisticRegression   -0.0106347   0.055515   0.164856  0.0456622   
+5           MLPClassifier    -0.003199  0.0806606   0.221548  0.0517918   
+7                     SVC  -0.00365674  0.0515222   0.129501  0.0524406   
+2           SGDClassifier   -0.0364108   0.015754   0.140001  0.0212629   
+
+        acc       auc           conf_matrix     f1_c0       f1_c1  \
+0   0.50791  0.587153  [[897, 870], [1, 2]]  0.673171  0.00457143   
+3   0.99774  0.499717   [[1766, 1], [3, 0]]  0.998869           0   
+4   0.99774  0.499717   [[1766, 1], [3, 0]]  0.998869           0   
+6   0.99774  0.499717   [[1766, 1], [3, 0]]  0.998869           0   
+8  0.997175  0.499434   [[1765, 2], [3, 0]]  0.998586           0   
+9  0.996045  0.498868   [[1763, 4], [3, 0]]  0.998019           0   
+1  0.994915  0.498302   [[1761, 6], [3, 0]]  0.997451           0   
+5   0.99435  0.498019   [[1760, 7], [3, 0]]  0.997167           0   
+7   0.99209  0.496887  [[1756, 11], [3, 0]]  0.996029           0   
+2  0.968362  0.485003  [[1714, 53], [3, 0]]  0.983927           0   
+
+         kappa  model_score   prec_c0     prec_c1    rec_c0    rec_c1  
+0   0.00119726    0.0143416  0.998886  0.00229358   0.50764  0.666667  
+3 -0.000848176 -0.000979667  0.998304           0  0.999434         0  
+4 -0.000848176 -0.000979667  0.998304           0  0.999434         0  
+6 -0.000848176 -0.000979667  0.998304           0  0.999434         0  
+8  -0.00135777  -0.00138585  0.998303           0  0.998868         0  
+9  -0.00194081    -0.001961  0.998301           0  0.997736         0  
+1  -0.00226501  -0.00240308  0.998299           0  0.996604         0  
+5  -0.00237853  -0.00259636  0.998298           0  0.996038         0  
+7  -0.00267055  -0.00325841  0.998294           0  0.993775         0  
+2  -0.00321856  -0.00723928  0.998253           0  0.970006         0  
+Elapsed time 598.40 mins 
+
+************************************************************
+
+pre/post: 5/0  win/stride: 2000/5  label:start 
+filename: stm_sb_modified.csv (feature set prepared earlier) 
+datetime: 2017-04-24 00:05:01.482000 
+pca_target: 0 	 poly degree: 0 	 kselect: 60 
+Imbalance: None 
+Extended target (count):  31485 13
+('Total : Processed (count): ', (5897L, 438L), 15)
+Final feature (count):  (5897L, 438L)
+Running GridSearchCV for GaussianNB.
+Fitting 5 folds for each of 1 candidates, totalling 5 fits
+BEST: GaussianNB(priors=None)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.493 	0.013 	0.001 	0.580 	0.573 	0.334
+[[870 897]
+ [  1   2]]
+             precision    recall  f1-score   support
+
+          0       1.00      0.49      0.66      1767
+          1       0.00      0.67      0.00         3
+
+avg / total       1.00      0.49      0.66      1770
+
+
+Running GridSearchCV for LogisticRegression.
+Fitting 5 folds for each of 450 candidates, totalling 2250 fits
+BEST: LogisticRegression(C=5, class_weight={1: 500}, dual=False, fit_intercept=True,
+          intercept_scaling=5, max_iter=100, multi_class='ovr', n_jobs=4,
+          penalty='l2', random_state=None, solver='liblinear', tol=0.0001,
+          verbose=0, warm_start=False)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.882 	-0.015 	-0.003 	0.442 	0.000 	0.000
+[[1562  205]
+ [   3    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      0.88      0.94      1767
+          1       0.00      0.00      0.00         3
+
+avg / total       1.00      0.88      0.94      1770
+
+
+Running GridSearchCV for SGDClassifier.
+Fitting 5 folds for each of 2700 candidates, totalling 13500 fits
+BEST: SGDClassifier(alpha=1, average=False, class_weight={1: 15}, epsilon=0.1,
+       eta0=0.001, fit_intercept=True, l1_ratio=0.15,
+       learning_rate='optimal', loss='squared_hinge', n_iter=5, n_jobs=4,
+       penalty='l1', power_t=0.5, random_state=None, shuffle=True,
+       verbose=0, warm_start=False)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.926 	-0.012 	-0.003 	0.464 	0.000 	0.000
+[[1639  128]
+ [   3    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      0.93      0.96      1767
+          1       0.00      0.00      0.00         3
+
+avg / total       1.00      0.93      0.96      1770
+
+
+Running GridSearchCV for ExtraTreesClassifier.
+Fitting 5 folds for each of 360 candidates, totalling 1800 fits
+BEST: ExtraTreesClassifier(bootstrap=False, class_weight={1: 500},
+           criterion='entropy', max_depth=16, max_features='auto',
+           max_leaf_nodes=None, min_impurity_split=1e-07,
+           min_samples_leaf=1, min_samples_split=2,
+           min_weight_fraction_leaf=0.0, n_estimators=50, n_jobs=4,
+           oob_score=False, random_state=None, verbose=0, warm_start=False)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.997 	-0.001 	-0.001 	0.499 	0.000 	0.000
+[[1765    2]
+ [   3    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1767
+          1       0.00      0.00      0.00         3
+
+avg / total       1.00      1.00      1.00      1770
+
+
+Running GridSearchCV for RandomForestClassifier.
+Fitting 5 folds for each of 360 candidates, totalling 1800 fits
+BEST: RandomForestClassifier(bootstrap=True, class_weight='balanced',
+            criterion='entropy', max_depth=8, max_features='auto',
+            max_leaf_nodes=None, min_impurity_split=1e-07,
+            min_samples_leaf=1, min_samples_split=2,
+            min_weight_fraction_leaf=0.0, n_estimators=15, n_jobs=4,
+            oob_score=False, random_state=None, verbose=0,
+            warm_start=False)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.995 	-0.002 	-0.002 	0.499 	0.000 	0.000
+[[1762    5]
+ [   3    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1767
+          1       0.00      0.00      0.00         3
+
+avg / total       1.00      1.00      1.00      1770
+
+
+Running GridSearchCV for MLPClassifier.
+Fitting 5 folds for each of 48 candidates, totalling 240 fits
+BEST: MLPClassifier(activation='tanh', alpha=0.1, batch_size='auto', beta_1=0.9,
+       beta_2=0.999, early_stopping=False, epsilon=1e-08,
+       hidden_layer_sizes=(240, 40), learning_rate='adaptive',
+       learning_rate_init=0.001, max_iter=200, momentum=0.9,
+       nesterovs_momentum=True, power_t=0.5, random_state=None,
+       shuffle=True, solver='lbfgs', tol=0.0001, validation_fraction=0.1,
+       verbose=False, warm_start=False)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.994 	-0.003 	-0.002 	0.498 	0.000 	0.000
+[[1759    8]
+ [   3    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1767
+          1       0.00      0.00      0.00         3
+
+avg / total       1.00      0.99      1.00      1770
+
+
+Running GridSearchCV for AdaBoostClassifier.
+Fitting 5 folds for each of 576 candidates, totalling 2880 fits
+BEST: AdaBoostClassifier(algorithm='SAMME.R',
+          base_estimator=DecisionTreeClassifier(class_weight={1: 50}, criterion='entropy', max_depth=8,
+            max_features=None, max_leaf_nodes=None,
+            min_impurity_split=1e-07, min_samples_leaf=1,
+            min_samples_split=2, min_weight_fraction_leaf=0.0,
+            presort=False, random_state=None, splitter='random'),
+          learning_rate=1.0, n_estimators=50, random_state=None)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.998 	0.407 	0.399 	0.666 	0.577 	0.311
+[[1766    1]
+ [   2    1]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1767
+          1       0.50      0.33      0.40         3
+
+avg / total       1.00      1.00      1.00      1770
+
+
+Running GridSearchCV for SVC.
+Fitting 5 folds for each of 160 candidates, totalling 800 fits
+BEST: SVC(C=10, cache_size=200, class_weight={1: 3}, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma=1, kernel='rbf',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.998 	-0.001 	-0.001 	0.500 	0.000 	0.000
+[[1766    1]
+ [   3    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1767
+          1       0.00      0.00      0.00         3
+
+avg / total       1.00      1.00      1.00      1770
+
+
+Running GridSearchCV for VotingClassifier.
+Fitting 5 folds for each of 216 candidates, totalling 1080 fits
+BEST: VotingClassifier(estimators=[('lr', LogisticRegression(C=1.0, class_weight='balanced', dual=False,
+          fit_intercept=True, intercept_scaling=1, max_iter=100,
+          multi_class='ovr', n_jobs=4, penalty='l2', random_state=None,
+          solver='liblinear', tol=0.0001, verbose=0, warm_start=False)), ('rf', R...owski',
+           metric_params=None, n_jobs=4, n_neighbors=2, p=2,
+           weights='uniform'))],
+         n_jobs=4, voting='soft', weights=[1, 1, 1])
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.997 	0.287 	0.284 	0.666 	0.577 	0.311
+[[1764    3]
+ [   2    1]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1767
+          1       0.25      0.33      0.29         3
+
+avg / total       1.00      1.00      1.00      1770
+
+
+Running GridSearchCV for KNeighborsClassifier.
+Fitting 5 folds for each of 96 candidates, totalling 480 fits
+BEST: KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski',
+           metric_params=None, n_jobs=4, n_neighbors=1, p=1,
+           weights='distance')
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.998 	0.407 	0.399 	0.666 	0.577 	0.311
+[[1766    1]
+ [   2    1]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1767
+          1       0.50      0.33      0.40         3
+
+avg / total       1.00      1.00      1.00      1770
+
+
+                estimator    min_score mean_score  max_score   sd_score  \
+6      AdaBoostClassifier  -0.00517003   0.175708    0.47018  0.0992828   
+9    KNeighborsClassifier  -0.00161137  0.0813526   0.376595   0.123871   
+8        VotingClassifier   -0.0014506   0.110221   0.410586   0.110042   
+0              GaussianNB    0.0284252  0.0284252  0.0284252          0   
+7                     SVC  -0.00795871  0.0751855   0.337473  0.0866313   
+3    ExtraTreesClassifier -0.000906498    0.21687    0.47018   0.097677   
+4  RandomForestClassifier -0.000764004  0.0483571   0.239785  0.0578608   
+5           MLPClassifier  -0.00268034   0.163898   0.341391  0.0900925   
+2           SGDClassifier    -0.115641  0.0104276  0.0884992  0.0158778   
+1      LogisticRegression   -0.0124459  0.0222464   0.074769  0.0260539   
+
+        acc       auc            conf_matrix     f1_c0       f1_c1  \
+6  0.998305  0.666384    [[1766, 1], [2, 1]]  0.999151         0.4   
+9  0.998305  0.666384    [[1766, 1], [2, 1]]  0.999151         0.4   
+8  0.997175  0.665818    [[1764, 3], [2, 1]]  0.998585    0.285714   
+0  0.492655  0.579513   [[870, 897], [1, 2]]  0.659591  0.00443459   
+7   0.99774  0.499717    [[1766, 1], [3, 0]]  0.998869           0   
+3  0.997175  0.499434    [[1765, 2], [3, 0]]  0.998586           0   
+4   0.99548  0.498585    [[1762, 5], [3, 0]]  0.997735           0   
+5  0.993785  0.497736    [[1759, 8], [3, 0]]  0.996883           0   
+2  0.925989   0.46378  [[1639, 128], [3, 0]]  0.961572           0   
+1  0.882486  0.441992  [[1562, 205], [3, 0]]  0.937575           0   
+
+         kappa  model_score   prec_c0     prec_c1    rec_c0    rec_c1  
+6     0.399185      0.40744  0.998869         0.5  0.999434  0.333333  
+9     0.399185      0.40744  0.998869         0.5  0.999434  0.333333  
+8     0.284328     0.287286  0.998867        0.25  0.998302  0.333333  
+0   0.00105961    0.0130846  0.998852  0.00222469   0.49236  0.666667  
+7 -0.000848176 -0.000979667  0.998304           0  0.999434         0  
+3  -0.00135777  -0.00138585  0.998303           0  0.998868         0  
+4  -0.00212314  -0.00219308    0.9983           0   0.99717         0  
+5  -0.00247142  -0.00277642  0.998297           0  0.995473         0  
+2  -0.00332321   -0.0115043  0.998173           0  0.927561         0  
+1  -0.00335214   -0.0149129  0.998083           0  0.883984         0  
+Elapsed time 107.31 mins 
+
+************************************************************
+
+[4;33mReloaded modules[24m: migraine_processing, classifiers[0m
+Finished.
+
+
+lagged (3,4)x1
+
+    pca = [0]
+    poly = [0, 2]
+    ksel = [40, 80]
+    imb = [None]
+	
+	
+	
+
+pre/post: 5/0  win/stride: 2000/5  label:start 
+filename: stm_sb_modified.csv (feature set prepared earlier) 
+datetime: 2017-04-24 08:29:48.859000 
+pca_target: 0 	 poly degree: 0 	 kselect: 40 
+Imbalance: None 
+Extended target (count):  31485 13
+('Total : Processed (count): ', (5897L, 222L), 15)
+Final feature (count):  (5897L, 222L)
+Running GridSearchCV for GaussianNB.
+Fitting 5 folds for each of 1 candidates, totalling 5 fits
+BEST: GaussianNB(priors=None)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.456 	0.010 	0.001 	0.561 	0.551 	0.310
+[[805 962]
+ [  1   2]]
+             precision    recall  f1-score   support
+
+          0       1.00      0.46      0.63      1767
+          1       0.00      0.67      0.00         3
+
+avg / total       1.00      0.46      0.62      1770
+
+
+Running GridSearchCV for LogisticRegression.
+Fitting 5 folds for each of 450 candidates, totalling 2250 fits
+BEST: LogisticRegression(C=10, class_weight='balanced', dual=False,
+          fit_intercept=True, intercept_scaling=1, max_iter=100,
+          multi_class='ovr', n_jobs=4, penalty='l2', random_state=None,
+          solver='liblinear', tol=0.0001, verbose=0, warm_start=False)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.882 	0.028 	0.006 	0.608 	0.543 	0.278
+[[1561  206]
+ [   2    1]]
+             precision    recall  f1-score   support
+
+          0       1.00      0.88      0.94      1767
+          1       0.00      0.33      0.01         3
+
+avg / total       1.00      0.88      0.94      1770
+
+
+Running GridSearchCV for SGDClassifier.
+Fitting 5 folds for each of 2700 candidates, totalling 13500 fits
+BEST: SGDClassifier(alpha=0.0001, average=False, class_weight={1: 50}, epsilon=0.1,
+       eta0=0.5, fit_intercept=True, l1_ratio=0.15,
+       learning_rate='invscaling', loss='perceptron', n_iter=5, n_jobs=4,
+       penalty='l2', power_t=0.5, random_state=None, shuffle=True,
+       verbose=0, warm_start=False)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.933 	-0.011 	-0.003 	0.467 	0.000 	0.000
+[[1651  116]
+ [   3    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      0.93      0.97      1767
+          1       0.00      0.00      0.00         3
+
+avg / total       1.00      0.93      0.96      1770
+
+
+Running GridSearchCV for ExtraTreesClassifier.
+Fitting 5 folds for each of 360 candidates, totalling 1800 fits
+BEST: ExtraTreesClassifier(bootstrap=False, class_weight='balanced',
+           criterion='entropy', max_depth=16, max_features='auto',
+           max_leaf_nodes=None, min_impurity_split=1e-07,
+           min_samples_leaf=1, min_samples_split=2,
+           min_weight_fraction_leaf=0.0, n_estimators=50, n_jobs=4,
+           oob_score=False, random_state=None, verbose=0, warm_start=False)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.997 	0.287 	0.284 	0.666 	0.577 	0.311
+[[1764    3]
+ [   2    1]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1767
+          1       0.25      0.33      0.29         3
+
+avg / total       1.00      1.00      1.00      1770
+
+
+Running GridSearchCV for RandomForestClassifier.
+Fitting 5 folds for each of 360 candidates, totalling 1800 fits
+BEST: RandomForestClassifier(bootstrap=True, class_weight={1: 3}, criterion='gini',
+            max_depth=None, max_features=0.75, max_leaf_nodes=None,
+            min_impurity_split=1e-07, min_samples_leaf=1,
+            min_samples_split=2, min_weight_fraction_leaf=0.0,
+            n_estimators=15, n_jobs=4, oob_score=False, random_state=None,
+            verbose=0, warm_start=False)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.998 	-0.001 	-0.001 	0.500 	0.000 	0.000
+[[1766    1]
+ [   3    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1767
+          1       0.00      0.00      0.00         3
+
+avg / total       1.00      1.00      1.00      1770
+
+
+Running GridSearchCV for MLPClassifier.
+Fitting 5 folds for each of 48 candidates, totalling 240 fits
+BEST: MLPClassifier(activation='tanh', alpha=0.001, batch_size='auto', beta_1=0.9,
+       beta_2=0.999, early_stopping=False, epsilon=1e-08,
+       hidden_layer_sizes=(60, 20, 10), learning_rate='adaptive',
+       learning_rate_init=0.001, max_iter=200, momentum=0.9,
+       nesterovs_momentum=True, power_t=0.5, random_state=None,
+       shuffle=True, solver='lbfgs', tol=0.0001, validation_fraction=0.1,
+       verbose=False, warm_start=False)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.997 	0.287 	0.284 	0.666 	0.577 	0.311
+[[1764    3]
+ [   2    1]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1767
+          1       0.25      0.33      0.29         3
+
+avg / total       1.00      1.00      1.00      1770
+
+
+Running GridSearchCV for AdaBoostClassifier.
+Fitting 5 folds for each of 576 candidates, totalling 2880 fits
+BEST: AdaBoostClassifier(algorithm='SAMME.R',
+          base_estimator=DecisionTreeClassifier(class_weight={1: 500}, criterion='entropy',
+            max_depth=16, max_features=None, max_leaf_nodes=None,
+            min_impurity_split=1e-07, min_samples_leaf=1,
+            min_samples_split=2, min_weight_fraction_leaf=0.0,
+            presort=False, random_state=None, splitter='random'),
+          learning_rate=0.5, n_estimators=50, random_state=None)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.998 	0.407 	0.399 	0.666 	0.577 	0.311
+[[1766    1]
+ [   2    1]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1767
+          1       0.50      0.33      0.40         3
+
+avg / total       1.00      1.00      1.00      1770
+
+
+Running GridSearchCV for SVC.
+Fitting 5 folds for each of 160 candidates, totalling 800 fits
+BEST: SVC(C=1, cache_size=200, class_weight={1: 3}, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma=10, kernel='rbf',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.997 	-0.001 	-0.001 	0.499 	0.000 	0.000
+[[1765    2]
+ [   3    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1767
+          1       0.00      0.00      0.00         3
+
+avg / total       1.00      1.00      1.00      1770
+
+
+Running GridSearchCV for VotingClassifier.
+Fitting 5 folds for each of 216 candidates, totalling 1080 fits
+BEST: VotingClassifier(estimators=[('lr', LogisticRegression(C=0.1, class_weight={1: 500}, dual=False,
+          fit_intercept=True, intercept_scaling=1, max_iter=100,
+          multi_class='ovr', n_jobs=4, penalty='l2', random_state=None,
+          solver='liblinear', tol=0.0001, verbose=0, warm_start=False)), ('rf', Ran...wski',
+           metric_params=None, n_jobs=4, n_neighbors=2, p=2,
+           weights='distance'))],
+         n_jobs=4, voting='soft', weights=[1, 1, 1])
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.998 	0.407 	0.399 	0.666 	0.577 	0.311
+[[1766    1]
+ [   2    1]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1767
+          1       0.50      0.33      0.40         3
+
+avg / total       1.00      1.00      1.00      1770
+
+
+Running GridSearchCV for KNeighborsClassifier.
+Fitting 5 folds for each of 96 candidates, totalling 480 fits
+BEST: KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski',
+           metric_params=None, n_jobs=4, n_neighbors=1, p=1,
+           weights='distance')
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.998 	0.332 	0.332 	0.666 	0.577 	0.311
+[[1765    2]
+ [   2    1]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1767
+          1       0.33      0.33      0.33         3
+
+avg / total       1.00      1.00      1.00      1770
+
+
+                estimator   min_score mean_score  max_score   sd_score  \
+6      AdaBoostClassifier  -0.0030723   0.166299   0.441156   0.095242   
+8        VotingClassifier -0.00184513   0.105945   0.358856   0.107834   
+9    KNeighborsClassifier -0.00187808  0.0589413   0.299108   0.102357   
+3    ExtraTreesClassifier  -0.0011073   0.219588    0.49558  0.0922899   
+5           MLPClassifier -0.00252472  0.0994903   0.258552  0.0801566   
+1      LogisticRegression  -0.0144425  0.0241022  0.0921331  0.0294665   
+0              GaussianNB    0.032856   0.032856   0.032856          0   
+4  RandomForestClassifier -0.00235712  0.0460652   0.372095  0.0672505   
+7                     SVC -0.00731108  0.0827773   0.366731  0.0910295   
+2           SGDClassifier  -0.0294162  0.0139194   0.115178  0.0182305   
+
+        acc       auc            conf_matrix     f1_c0       f1_c1  \
+6  0.998305  0.666384    [[1766, 1], [2, 1]]  0.999151         0.4   
+8  0.998305  0.666384    [[1766, 1], [2, 1]]  0.999151         0.4   
+9   0.99774  0.666101    [[1765, 2], [2, 1]]  0.998868    0.333333   
+3  0.997175  0.665818    [[1764, 3], [2, 1]]  0.998585    0.285714   
+5  0.997175  0.665818    [[1764, 3], [2, 1]]  0.998585    0.285714   
+1  0.882486  0.608376  [[1561, 206], [2, 1]]  0.937538  0.00952381   
+0  0.455932  0.561121   [[805, 962], [1, 2]]  0.625729   0.0041365   
+4   0.99774  0.499717    [[1766, 1], [3, 0]]  0.998869           0   
+7  0.997175  0.499434    [[1765, 2], [3, 0]]  0.998586           0   
+2  0.932768  0.467176  [[1651, 116], [3, 0]]  0.965215           0   
+
+         kappa  model_score   prec_c0     prec_c1    rec_c0    rec_c1  
+6     0.399185      0.40744  0.998869         0.5  0.999434  0.333333  
+8     0.399185      0.40744  0.998869         0.5  0.999434  0.333333  
+9     0.332201     0.332201  0.998868    0.333333  0.998868  0.333333  
+3     0.284328     0.287286  0.998867        0.25  0.998302  0.333333  
+5     0.284328     0.287286  0.998867        0.25  0.998302  0.333333  
+1   0.00620313    0.0277445   0.99872  0.00483092  0.883418  0.333333  
+0  0.000759758    0.0100969  0.998759  0.00207469  0.455574  0.666667  
+4 -0.000848176 -0.000979667  0.998304           0  0.999434         0  
+7  -0.00135777  -0.00138585  0.998303           0  0.998868         0  
+2  -0.00331533    -0.010912  0.998186           0  0.934352         0  
+Elapsed time 84.34 mins 
+
+************************************************************
+
+pre/post: 5/0  win/stride: 2000/5  label:start 
+filename: stm_sb_modified.csv (feature set prepared earlier) 
+datetime: 2017-04-24 09:54:09.301000 
+pca_target: 0 	 poly degree: 0 	 kselect: 80 
+Imbalance: None 
+Extended target (count):  31485 13
+('Total : Processed (count): ', (5897L, 222L), 15)
+Final feature (count):  (5897L, 222L)
+Running GridSearchCV for GaussianNB.
+Fitting 5 folds for each of 1 candidates, totalling 5 fits
+BEST: GaussianNB(priors=None)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.355 	0.002 	0.000 	0.510 	0.486 	0.244
+[[ 626 1141]
+ [   1    2]]
+             precision    recall  f1-score   support
+
+          0       1.00      0.35      0.52      1767
+          1       0.00      0.67      0.00         3
+
+avg / total       1.00      0.35      0.52      1770
+
+
+Running GridSearchCV for LogisticRegression.
+Fitting 5 folds for each of 450 candidates, totalling 2250 fits
+BEST: LogisticRegression(C=5, class_weight={1: 500}, dual=False, fit_intercept=True,
+          intercept_scaling=5, max_iter=100, multi_class='ovr', n_jobs=4,
+          penalty='l2', random_state=None, solver='liblinear', tol=0.0001,
+          verbose=0, warm_start=False)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.943 	0.049 	0.016 	0.639 	0.561 	0.295
+[[1668   99]
+ [   2    1]]
+             precision    recall  f1-score   support
+
+          0       1.00      0.94      0.97      1767
+          1       0.01      0.33      0.02         3
+
+avg / total       1.00      0.94      0.97      1770
+
+
+Running GridSearchCV for SGDClassifier.
+Fitting 5 folds for each of 2700 candidates, totalling 13500 fits
+BEST: SGDClassifier(alpha=0.0001, average=False, class_weight={1: 15}, epsilon=0.1,
+       eta0=0.5, fit_intercept=True, l1_ratio=0.15,
+       learning_rate='constant', loss='perceptron', n_iter=5, n_jobs=4,
+       penalty='l1', power_t=0.5, random_state=None, shuffle=True,
+       verbose=0, warm_start=False)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.936 	0.046 	0.014 	0.635 	0.559 	0.294
+[[1656  111]
+ [   2    1]]
+             precision    recall  f1-score   support
+
+          0       1.00      0.94      0.97      1767
+          1       0.01      0.33      0.02         3
+
+avg / total       1.00      0.94      0.97      1770
+
+
+Running GridSearchCV for ExtraTreesClassifier.
+Fitting 5 folds for each of 360 candidates, totalling 1800 fits
+BEST: ExtraTreesClassifier(bootstrap=False, class_weight={1: 3},
+           criterion='entropy', max_depth=None, max_features='auto',
+           max_leaf_nodes=None, min_impurity_split=1e-07,
+           min_samples_leaf=1, min_samples_split=2,
+           min_weight_fraction_leaf=0.0, n_estimators=15, n_jobs=4,
+           oob_score=False, random_state=None, verbose=0, warm_start=False)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.997 	-0.001 	-0.001 	0.499 	0.000 	0.000
+[[1765    2]
+ [   3    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1767
+          1       0.00      0.00      0.00         3
+
+avg / total       1.00      1.00      1.00      1770
+
+
+Running GridSearchCV for RandomForestClassifier.
+Fitting 5 folds for each of 360 candidates, totalling 1800 fits
+BEST: RandomForestClassifier(bootstrap=True, class_weight={1: 15}, criterion='gini',
+            max_depth=None, max_features=0.75, max_leaf_nodes=None,
+            min_impurity_split=1e-07, min_samples_leaf=1,
+            min_samples_split=2, min_weight_fraction_leaf=0.0,
+            n_estimators=15, n_jobs=4, oob_score=False, random_state=None,
+            verbose=0, warm_start=False)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.998 	-0.001 	-0.001 	0.500 	0.000 	0.000
+[[1766    1]
+ [   3    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1767
+          1       0.00      0.00      0.00         3
+
+avg / total       1.00      1.00      1.00      1770
+
+
+Running GridSearchCV for MLPClassifier.
+Fitting 5 folds for each of 48 candidates, totalling 240 fits
+BEST: MLPClassifier(activation='tanh', alpha=0.5, batch_size='auto', beta_1=0.9,
+       beta_2=0.999, early_stopping=False, epsilon=1e-08,
+       hidden_layer_sizes=(60, 20, 10), learning_rate='adaptive',
+       learning_rate_init=0.001, max_iter=200, momentum=0.9,
+       nesterovs_momentum=True, power_t=0.5, random_state=None,
+       shuffle=True, solver='lbfgs', tol=0.0001, validation_fraction=0.1,
+       verbose=False, warm_start=False)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.998 	0.000 	0.000 	0.500 	0.000 	0.000
+[[1767    0]
+ [   3    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1767
+          1       0.00      0.00      0.00         3
+
+avg / total       1.00      1.00      1.00      1770
+
+
+Running GridSearchCV for AdaBoostClassifier.
+Fitting 5 folds for each of 576 candidates, totalling 2880 fits
+BEST: AdaBoostClassifier(algorithm='SAMME.R',
+          base_estimator=DecisionTreeClassifier(class_weight={1: 500}, criterion='gini', max_depth=32,
+            max_features=None, max_leaf_nodes=None,
+            min_impurity_split=1e-07, min_samples_leaf=1,
+            min_samples_split=2, min_weight_fraction_leaf=0.0,
+            presort=False, random_state=None, splitter='random'),
+          learning_rate=0.5, n_estimators=15, random_state=None)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.997 	0.287 	0.284 	0.666 	0.577 	0.311
+[[1764    3]
+ [   2    1]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1767
+          1       0.25      0.33      0.29         3
+
+avg / total       1.00      1.00      1.00      1770
+
+
+Running GridSearchCV for SVC.
+Fitting 5 folds for each of 160 candidates, totalling 800 fits
+BEST: SVC(C=0.5, cache_size=200, class_weight={1: 3}, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma=10, kernel='rbf',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.998 	0.000 	0.000 	0.500 	0.000 	0.000
+[[1767    0]
+ [   3    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1767
+          1       0.00      0.00      0.00         3
+
+avg / total       1.00      1.00      1.00      1770
+
+
+Running GridSearchCV for VotingClassifier.
+Fitting 5 folds for each of 216 candidates, totalling 1080 fits
+BEST: VotingClassifier(estimators=[('lr', LogisticRegression(C=10.0, class_weight={1: 500}, dual=False,
+          fit_intercept=True, intercept_scaling=1, max_iter=100,
+          multi_class='ovr', n_jobs=4, penalty='l2', random_state=None,
+          solver='liblinear', tol=0.0001, verbose=0, warm_start=False)), ('rf', Ra...owski',
+           metric_params=None, n_jobs=4, n_neighbors=4, p=2,
+           weights='uniform'))],
+         n_jobs=4, voting='soft', weights=[1, 1, 1])
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.998 	-0.001 	-0.001 	0.500 	0.000 	0.000
+[[1766    1]
+ [   3    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1767
+          1       0.00      0.00      0.00         3
+
+avg / total       1.00      1.00      1.00      1770
+
+
+Running GridSearchCV for KNeighborsClassifier.
+Fitting 5 folds for each of 96 candidates, totalling 480 fits
+BEST: KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski',
+           metric_params=None, n_jobs=4, n_neighbors=1, p=2,
+           weights='distance')
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.998 	0.332 	0.332 	0.666 	0.577 	0.311
+[[1765    2]
+ [   2    1]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1767
+          1       0.33      0.33      0.33         3
+
+avg / total       1.00      1.00      1.00      1770
+
+
+                estimator   min_score mean_score max_score   sd_score  \
+9    KNeighborsClassifier  -0.0011073   0.115886   0.30541   0.118005   
+6      AdaBoostClassifier -0.00241343   0.178459  0.425652  0.0851643   
+1      LogisticRegression -0.00960573  0.0354621  0.130609  0.0377347   
+2           SGDClassifier  -0.0272951  0.0165687  0.111381  0.0205657   
+0              GaussianNB    0.034383   0.034383  0.034383          0   
+5           MLPClassifier -0.00119066   0.149048   0.28347  0.0696823   
+7                     SVC -0.00646962  0.0933613  0.230828  0.0759314   
+4  RandomForestClassifier -0.00162648  0.0365851  0.371408  0.0733365   
+8        VotingClassifier -0.00229796   0.139005  0.377404   0.113289   
+3    ExtraTreesClassifier -0.00170263    0.21714   0.47146  0.0945093   
+
+        acc       auc            conf_matrix     f1_c0      f1_c1  \
+9   0.99774  0.666101    [[1765, 2], [2, 1]]  0.998868   0.333333   
+6  0.997175  0.665818    [[1764, 3], [2, 1]]  0.998585   0.285714   
+1  0.942938  0.638653   [[1668, 99], [2, 1]]  0.970614  0.0194175   
+2  0.936158  0.635257  [[1656, 111], [2, 1]]  0.967007  0.0173913   
+0  0.354802   0.51047  [[626, 1141], [1, 2]]  0.522974  0.0034904   
+5  0.998305       0.5    [[1767, 0], [3, 0]]  0.999152          0   
+7  0.998305       0.5    [[1767, 0], [3, 0]]  0.999152          0   
+4   0.99774  0.499717    [[1766, 1], [3, 0]]  0.998869          0   
+8   0.99774  0.499717    [[1766, 1], [3, 0]]  0.998869          0   
+3  0.997175  0.499434    [[1765, 2], [3, 0]]  0.998586          0   
+
+         kappa  model_score   prec_c0     prec_c1    rec_c0    rec_c1  
+9     0.332201     0.332201  0.998868    0.333333  0.998868  0.333333  
+6     0.284328     0.287286  0.998867        0.25  0.998302  0.333333  
+1    0.0161796    0.0494061  0.998802        0.01  0.943973  0.333333  
+2    0.0141366    0.0457056  0.998794  0.00892857  0.937182  0.333333  
+0  0.000109816   0.00180089  0.998405  0.00174978  0.354273  0.666667  
+5            0            0  0.998305           0         1         0  
+7            0            0  0.998305           0         1         0  
+4 -0.000848176 -0.000979667  0.998304           0  0.999434         0  
+8 -0.000848176 -0.000979667  0.998304           0  0.999434         0  
+3  -0.00135777  -0.00138585  0.998303           0  0.998868         0  
+Elapsed time 124.95 mins 
+
+************************************************************
+
+pre/post: 5/0  win/stride: 2000/5  label:start 
+filename: stm_sb_modified.csv (feature set prepared earlier) 
+datetime: 2017-04-24 11:59:06.422000 
+pca_target: 0 	 poly degree: 2 	 kselect: 40 
+Imbalance: None 
+Extended target (count):  31485 13
+('Total : Processed (count): ', (5897L, 24976L), 15)
+Final feature (count):  (5897L, 24976L)
+Running GridSearchCV for GaussianNB.
+Fitting 5 folds for each of 1 candidates, totalling 5 fits
+BEST: GaussianNB(priors=None)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.896 	0.031 	0.007 	0.615 	0.547 	0.282
+[[1585  182]
+ [   2    1]]
+             precision    recall  f1-score   support
+
+          0       1.00      0.90      0.95      1767
+          1       0.01      0.33      0.01         3
+
+avg / total       1.00      0.90      0.94      1770
+
+
+Running GridSearchCV for LogisticRegression.
+Fitting 5 folds for each of 450 candidates, totalling 2250 fits
+BEST: LogisticRegression(C=10, class_weight={1: 15}, dual=False, fit_intercept=True,
+          intercept_scaling=0.01, max_iter=100, multi_class='ovr',
+          n_jobs=4, penalty='l2', random_state=None, solver='liblinear',
+          tol=0.0001, verbose=0, warm_start=False)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.995 	-0.002 	-0.002 	0.499 	0.000 	0.000
+[[1762    5]
+ [   3    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1767
+          1       0.00      0.00      0.00         3
+
+avg / total       1.00      1.00      1.00      1770
+
+
+Running GridSearchCV for SGDClassifier.
+Fitting 5 folds for each of 2700 candidates, totalling 13500 fits
+BEST: SGDClassifier(alpha=0.001, average=False, class_weight={1: 50}, epsilon=0.1,
+       eta0=0.5, fit_intercept=True, l1_ratio=0.15,
+       learning_rate='optimal', loss='perceptron', n_iter=5, n_jobs=4,
+       penalty='elasticnet', power_t=0.5, random_state=None, shuffle=True,
+       verbose=0, warm_start=False)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.994 	-0.003 	-0.002 	0.498 	0.000 	0.000
+[[1760    7]
+ [   3    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1767
+          1       0.00      0.00      0.00         3
+
+avg / total       1.00      0.99      1.00      1770
+
+
+Running GridSearchCV for ExtraTreesClassifier.
+Fitting 5 folds for each of 360 candidates, totalling 1800 fits
+BEST: ExtraTreesClassifier(bootstrap=False, class_weight={1: 50}, criterion='gini',
+           max_depth=8, max_features=0.33, max_leaf_nodes=None,
+           min_impurity_split=1e-07, min_samples_leaf=1,
+           min_samples_split=2, min_weight_fraction_leaf=0.0,
+           n_estimators=50, n_jobs=4, oob_score=False, random_state=None,
+           verbose=0, warm_start=False)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.997 	-0.002 	-0.002 	0.499 	0.000 	0.000
+[[1764    3]
+ [   3    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1767
+          1       0.00      0.00      0.00         3
+
+avg / total       1.00      1.00      1.00      1770
+
+
+Running GridSearchCV for RandomForestClassifier.
+Fitting 5 folds for each of 360 candidates, totalling 1800 fits
+BEST: RandomForestClassifier(bootstrap=True, class_weight={1: 3}, criterion='gini',
+            max_depth=32, max_features=0.33, max_leaf_nodes=None,
+            min_impurity_split=1e-07, min_samples_leaf=1,
+            min_samples_split=2, min_weight_fraction_leaf=0.0,
+            n_estimators=15, n_jobs=4, oob_score=False, random_state=None,
+            verbose=0, warm_start=False)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.998 	-0.001 	-0.001 	0.500 	0.000 	0.000
+[[1766    1]
+ [   3    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1767
+          1       0.00      0.00      0.00         3
+
+avg / total       1.00      1.00      1.00      1770
+
+
+Running GridSearchCV for MLPClassifier.
+Fitting 5 folds for each of 48 candidates, totalling 240 fits
+BEST: MLPClassifier(activation='tanh', alpha=0.1, batch_size='auto', beta_1=0.9,
+       beta_2=0.999, early_stopping=False, epsilon=1e-08,
+       hidden_layer_sizes=(500,), learning_rate='adaptive',
+       learning_rate_init=0.001, max_iter=200, momentum=0.9,
+       nesterovs_momentum=True, power_t=0.5, random_state=None,
+       shuffle=True, solver='lbfgs', tol=0.0001, validation_fraction=0.1,
+       verbose=False, warm_start=False)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.998 	-0.001 	-0.001 	0.500 	0.000 	0.000
+[[1766    1]
+ [   3    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1767
+          1       0.00      0.00      0.00         3
+
+avg / total       1.00      1.00      1.00      1770
+
+
+Running GridSearchCV for AdaBoostClassifier.
+Fitting 5 folds for each of 576 candidates, totalling 2880 fits
+BEST: AdaBoostClassifier(algorithm='SAMME.R',
+          base_estimator=DecisionTreeClassifier(class_weight='balanced', criterion='gini', max_depth=4,
+            max_features=None, max_leaf_nodes=None,
+            min_impurity_split=1e-07, min_samples_leaf=1,
+            min_samples_split=2, min_weight_fraction_leaf=0.0,
+            presort=False, random_state=None, splitter='random'),
+          learning_rate=0.5, n_estimators=80, random_state=None)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.998 	0.407 	0.399 	0.666 	0.577 	0.311
+[[1766    1]
+ [   2    1]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1767
+          1       0.50      0.33      0.40         3
+
+avg / total       1.00      1.00      1.00      1770
+
+
+Running GridSearchCV for SVC.
+Fitting 5 folds for each of 160 candidates, totalling 800 fits
+BEST: SVC(C=1, cache_size=200, class_weight={1: 3}, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma=10, kernel='rbf',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.998 	-0.001 	-0.001 	0.500 	0.000 	0.000
+[[1766    1]
+ [   3    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1767
+          1       0.00      0.00      0.00         3
+
+avg / total       1.00      1.00      1.00      1770
+
+
+Running GridSearchCV for VotingClassifier.
+Fitting 5 folds for each of 216 candidates, totalling 1080 fits
+BEST: VotingClassifier(estimators=[('lr', LogisticRegression(C=10.0, class_weight={1: 500}, dual=False,
+          fit_intercept=True, intercept_scaling=1, max_iter=100,
+          multi_class='ovr', n_jobs=4, penalty='l2', random_state=None,
+          solver='liblinear', tol=0.0001, verbose=0, warm_start=False)), ('rf', Ra...wski',
+           metric_params=None, n_jobs=4, n_neighbors=2, p=2,
+           weights='distance'))],
+         n_jobs=4, voting='soft', weights=[1, 1, 1])
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.997 	-0.001 	-0.001 	0.499 	0.000 	0.000
+[[1765    2]
+ [   3    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1767
+          1       0.00      0.00      0.00         3
+
+avg / total       1.00      1.00      1.00      1770
+
+
+Running GridSearchCV for KNeighborsClassifier.
+Fitting 5 folds for each of 96 candidates, totalling 480 fits
+BEST: KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski',
+           metric_params=None, n_jobs=4, n_neighbors=1, p=1,
+           weights='distance')
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.998 	0.332 	0.332 	0.666 	0.577 	0.311
+[[1765    2]
+ [   2    1]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1767
+          1       0.33      0.33      0.33         3
+
+avg / total       1.00      1.00      1.00      1770
+
+
+                estimator   min_score mean_score  max_score   sd_score  \
+6      AdaBoostClassifier -0.00332059   0.161448   0.477134   0.112396   
+9    KNeighborsClassifier -0.00184513  0.0786732   0.328714   0.110684   
+0              GaussianNB   0.0802705  0.0802705  0.0802705          0   
+4  RandomForestClassifier -0.00365485  0.0290369   0.230828   0.057238   
+5           MLPClassifier -0.00170263   0.121415   0.247429   0.074211   
+7                     SVC -0.00227804  0.0622218   0.337699  0.0720922   
+8        VotingClassifier -0.00159309  0.0967958   0.325256  0.0983855   
+3    ExtraTreesClassifier   0.0798599   0.276195   0.489233  0.0833775   
+1      LogisticRegression  -0.0198138  0.0217452    0.11064  0.0222765   
+2           SGDClassifier  -0.0575262    0.01179   0.140722  0.0180189   
+
+        acc       auc            conf_matrix     f1_c0      f1_c1  \
+6  0.998305  0.666384    [[1766, 1], [2, 1]]  0.999151        0.4   
+9   0.99774  0.666101    [[1765, 2], [2, 1]]  0.998868   0.333333   
+0  0.896045  0.615167  [[1585, 182], [2, 1]]   0.94514  0.0107527   
+4   0.99774  0.499717    [[1766, 1], [3, 0]]  0.998869          0   
+5   0.99774  0.499717    [[1766, 1], [3, 0]]  0.998869          0   
+7   0.99774  0.499717    [[1766, 1], [3, 0]]  0.998869          0   
+8  0.997175  0.499434    [[1765, 2], [3, 0]]  0.998586          0   
+3   0.99661  0.499151    [[1764, 3], [3, 0]]  0.998302          0   
+1   0.99548  0.498585    [[1762, 5], [3, 0]]  0.997735          0   
+2   0.99435  0.498019    [[1760, 7], [3, 0]]  0.997167          0   
+
+         kappa  model_score   prec_c0     prec_c1    rec_c0    rec_c1  
+6     0.399185      0.40744  0.998869         0.5  0.999434  0.333333  
+9     0.332201     0.332201  0.998868    0.333333  0.998868  0.333333  
+0   0.00744235    0.0311188   0.99874  0.00546448  0.897001  0.333333  
+4 -0.000848176 -0.000979667  0.998304           0  0.999434         0  
+5 -0.000848176 -0.000979667  0.998304           0  0.999434         0  
+7 -0.000848176 -0.000979667  0.998304           0  0.999434         0  
+8  -0.00135777  -0.00138585  0.998303           0  0.998868         0  
+3  -0.00169779  -0.00169779  0.998302           0  0.998302         0  
+1  -0.00212314  -0.00219308    0.9983           0   0.99717         0  
+2  -0.00237853  -0.00259636  0.998298           0  0.996038         0  
+Elapsed time 93.89 mins 
+
+************************************************************
+
+pre/post: 5/0  win/stride: 2000/5  label:start 
+filename: stm_sb_modified.csv (feature set prepared earlier) 
+datetime: 2017-04-24 13:32:59.914000 
+pca_target: 0 	 poly degree: 2 	 kselect: 80 
+Imbalance: None 
+Extended target (count):  31485 13
+('Total : Processed (count): ', (5897L, 24976L), 15)
+Final feature (count):  (5897L, 24976L)
+Running GridSearchCV for GaussianNB.
+Fitting 5 folds for each of 1 candidates, totalling 5 fits
+BEST: GaussianNB(priors=None)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.827 	0.017 	0.003 	0.580 	0.525 	0.262
+[[1462  305]
+ [   2    1]]
+             precision    recall  f1-score   support
+
+          0       1.00      0.83      0.90      1767
+          1       0.00      0.33      0.01         3
+
+avg / total       1.00      0.83      0.90      1770
+
+
+Running GridSearchCV for LogisticRegression.
+Fitting 5 folds for each of 450 candidates, totalling 2250 fits
+BEST: LogisticRegression(C=5, class_weight={1: 50}, dual=False, fit_intercept=True,
+          intercept_scaling=0.1, max_iter=100, multi_class='ovr', n_jobs=4,
+          penalty='l2', random_state=None, solver='liblinear', tol=0.0001,
+          verbose=0, warm_start=False)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.981 	-0.005 	-0.003 	0.492 	0.000 	0.000
+[[1737   30]
+ [   3    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      0.98      0.99      1767
+          1       0.00      0.00      0.00         3
+
+avg / total       1.00      0.98      0.99      1770
+
+
+Running GridSearchCV for SGDClassifier.
+Fitting 5 folds for each of 2700 candidates, totalling 13500 fits
+BEST: SGDClassifier(alpha=0.0001, average=False, class_weight={1: 15}, epsilon=0.1,
+       eta0=0.001, fit_intercept=True, l1_ratio=0.15,
+       learning_rate='optimal', loss='modified_huber', n_iter=5, n_jobs=4,
+       penalty='l2', power_t=0.5, random_state=None, shuffle=True,
+       verbose=0, warm_start=False)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.998 	0.000 	0.000 	0.500 	0.000 	0.000
+[[1767    0]
+ [   3    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1767
+          1       0.00      0.00      0.00         3
+
+avg / total       1.00      1.00      1.00      1770
+
+
+Running GridSearchCV for ExtraTreesClassifier.
+Fitting 5 folds for each of 360 candidates, totalling 1800 fits
+BEST: ExtraTreesClassifier(bootstrap=False, class_weight={1: 3}, criterion='gini',
+           max_depth=8, max_features=0.33, max_leaf_nodes=None,
+           min_impurity_split=1e-07, min_samples_leaf=1,
+           min_samples_split=2, min_weight_fraction_leaf=0.0,
+           n_estimators=15, n_jobs=4, oob_score=False, random_state=None,
+           verbose=0, warm_start=False)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.998 	-0.001 	-0.001 	0.500 	0.000 	0.000
+[[1766    1]
+ [   3    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1767
+          1       0.00      0.00      0.00         3
+
+avg / total       1.00      1.00      1.00      1770
+
+
+Running GridSearchCV for RandomForestClassifier.
+Fitting 5 folds for each of 360 candidates, totalling 1800 fits
+BEST: RandomForestClassifier(bootstrap=True, class_weight='balanced',
+            criterion='entropy', max_depth=32, max_features='auto',
+            max_leaf_nodes=None, min_impurity_split=1e-07,
+            min_samples_leaf=1, min_samples_split=2,
+            min_weight_fraction_leaf=0.0, n_estimators=15, n_jobs=4,
+            oob_score=False, random_state=None, verbose=0,
+            warm_start=False)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.998 	-0.001 	-0.001 	0.500 	0.000 	0.000
+[[1766    1]
+ [   3    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1767
+          1       0.00      0.00      0.00         3
+
+avg / total       1.00      1.00      1.00      1770
+
+
+Running GridSearchCV for MLPClassifier.
+Fitting 5 folds for each of 48 candidates, totalling 240 fits
+BEST: MLPClassifier(activation='tanh', alpha=0.001, batch_size='auto', beta_1=0.9,
+       beta_2=0.999, early_stopping=False, epsilon=1e-08,
+       hidden_layer_sizes=(60, 20, 10), learning_rate='adaptive',
+       learning_rate_init=0.001, max_iter=200, momentum=0.9,
+       nesterovs_momentum=True, power_t=0.5, random_state=None,
+       shuffle=True, solver='lbfgs', tol=0.0001, validation_fraction=0.1,
+       verbose=False, warm_start=False)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.993 	-0.003 	-0.003 	0.497 	0.000 	0.000
+[[1757   10]
+ [   3    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      0.99      1.00      1767
+          1       0.00      0.00      0.00         3
+
+avg / total       1.00      0.99      0.99      1770
+
+
+Running GridSearchCV for AdaBoostClassifier.
+Fitting 5 folds for each of 576 candidates, totalling 2880 fits
+BEST: AdaBoostClassifier(algorithm='SAMME.R',
+          base_estimator=DecisionTreeClassifier(class_weight={1: 5}, criterion='gini', max_depth=4,
+            max_features=None, max_leaf_nodes=None,
+            min_impurity_split=1e-07, min_samples_leaf=1,
+            min_samples_split=2, min_weight_fraction_leaf=0.0,
+            presort=False, random_state=None, splitter='random'),
+          learning_rate=1.0, n_estimators=80, random_state=None)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.998 	0.332 	0.332 	0.666 	0.577 	0.311
+[[1765    2]
+ [   2    1]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1767
+          1       0.33      0.33      0.33         3
+
+avg / total       1.00      1.00      1.00      1770
+
+
+Running GridSearchCV for SVC.
+Fitting 5 folds for each of 160 candidates, totalling 800 fits
+BEST: SVC(C=1, cache_size=200, class_weight={1: 3}, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma=1, kernel='rbf',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.997 	-0.001 	-0.001 	0.499 	0.000 	0.000
+[[1765    2]
+ [   3    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1767
+          1       0.00      0.00      0.00         3
+
+avg / total       1.00      1.00      1.00      1770
+
+
+Running GridSearchCV for VotingClassifier.
+Fitting 5 folds for each of 216 candidates, totalling 1080 fits
+BEST: VotingClassifier(estimators=[('lr', LogisticRegression(C=10.0, class_weight='balanced', dual=False,
+          fit_intercept=True, intercept_scaling=1, max_iter=100,
+          multi_class='ovr', n_jobs=4, penalty='l2', random_state=None,
+          solver='liblinear', tol=0.0001, verbose=0, warm_start=False)), ('rf', ...owski',
+           metric_params=None, n_jobs=4, n_neighbors=2, p=2,
+           weights='uniform'))],
+         n_jobs=4, voting='soft', weights=[1, 1, 1])
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.997 	-0.002 	-0.002 	0.499 	0.000 	0.000
+[[1764    3]
+ [   3    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1767
+          1       0.00      0.00      0.00         3
+
+avg / total       1.00      1.00      1.00      1770
+
+
+Running GridSearchCV for KNeighborsClassifier.
+Fitting 5 folds for each of 96 candidates, totalling 480 fits
+BEST: KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski',
+           metric_params=None, n_jobs=4, n_neighbors=1, p=1,
+           weights='distance')
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.997 	0.287 	0.284 	0.666 	0.577 	0.311
+[[1764    3]
+ [   2    1]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1767
+          1       0.25      0.33      0.29         3
+
+avg / total       1.00      1.00      1.00      1770
+
+
+                estimator   min_score mean_score  max_score   sd_score  \
+6      AdaBoostClassifier -0.00314351   0.174505   0.490246  0.0973107   
+9    KNeighborsClassifier -0.00159309  0.0909185   0.317698    0.12408   
+0              GaussianNB   0.0571656  0.0571656  0.0571656          0   
+2           SGDClassifier  -0.0813618  0.0141109   0.146195  0.0191072   
+3    ExtraTreesClassifier    0.080112   0.308135   0.578697  0.0806473   
+4  RandomForestClassifier -0.00246789  0.0469306   0.256681  0.0591188   
+7                     SVC -0.00139229  0.0979903   0.403699   0.075385   
+8        VotingClassifier -0.00173559   0.155872    0.39173    0.12402   
+5           MLPClassifier  -0.0022028    0.16413   0.299424  0.0671148   
+1      LogisticRegression  -0.0219804  0.0406941   0.173148  0.0407444   
+
+        acc       auc            conf_matrix     f1_c0       f1_c1  \
+6   0.99774  0.666101    [[1765, 2], [2, 1]]  0.998868    0.333333   
+9  0.997175  0.665818    [[1764, 3], [2, 1]]  0.998585    0.285714   
+0  0.826554  0.580362  [[1462, 305], [2, 1]]  0.904983  0.00647249   
+2  0.998305       0.5    [[1767, 0], [3, 0]]  0.999152           0   
+3   0.99774  0.499717    [[1766, 1], [3, 0]]  0.998869           0   
+4   0.99774  0.499717    [[1766, 1], [3, 0]]  0.998869           0   
+7  0.997175  0.499434    [[1765, 2], [3, 0]]  0.998586           0   
+8   0.99661  0.499151    [[1764, 3], [3, 0]]  0.998302           0   
+5  0.992655   0.49717   [[1757, 10], [3, 0]]  0.996314           0   
+1  0.981356  0.491511   [[1737, 30], [3, 0]]   0.99059           0   
+
+         kappa  model_score   prec_c0     prec_c1    rec_c0    rec_c1  
+6     0.332201     0.332201  0.998868    0.333333  0.998868  0.333333  
+9     0.284328     0.287286  0.998867        0.25  0.998302  0.333333  
+0   0.00312607    0.0174835  0.998634  0.00326797  0.827391  0.333333  
+2            0            0  0.998305           0         1         0  
+3 -0.000848176 -0.000979667  0.998304           0  0.999434         0  
+4 -0.000848176 -0.000979667  0.998304           0  0.999434         0  
+7  -0.00135777  -0.00138585  0.998303           0  0.998868         0  
+8  -0.00169779  -0.00169779  0.998302           0  0.998302         0  
+5  -0.00261438  -0.00310589  0.998295           0  0.994341         0  
+1  -0.00309119  -0.00541039  0.998276           0  0.983022         0  
+Elapsed time 126.32 mins 
+
+************************************************************
+
+[4;33mReloaded modules[24m: migraine_processing, classifiers[0m
+Finished.
+
+
+
+lagged (3,4)x1 , Standard
+
+pca = [0]
+    poly = [2]
+    ksel = [80]
+    imb = [ClusterCentroids(), None]
+	
+	
+
+
+
+
+pre/post: 5/0  win/stride: 2000/5  label:start 
+filename: stm_sb_modified.csv (feature set prepared earlier) 
+datetime: 2017-04-24 15:58:48.745000 
+pca_target: 0 	 poly degree: 2 	 kselect: 80 
+Imbalance: ClusterCentroids(estimator=None, n_jobs=1, random_state=None, ratio='auto') 
+Extended target (count):  31485 13
+('Total : Processed (count): ', (5897L, 24976L), 15)
+Final feature (count):  (5897L, 24976L)
+Running GridSearchCV for GaussianNB.
+Fitting 5 folds for each of 1 candidates, totalling 5 fits
+BEST: GaussianNB(priors=None)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.098 	0.013 	0.000 	0.548 	0.310 	0.105
+[[ 170 1597]
+ [   0    3]]
+             precision    recall  f1-score   support
+
+          0       1.00      0.10      0.18      1767
+          1       0.00      1.00      0.00         3
+
+avg / total       1.00      0.10      0.18      1770
+
+
+Running GridSearchCV for LogisticRegression.
+Fitting 5 folds for each of 450 candidates, totalling 2250 fits
+BEST: LogisticRegression(C=0.001, class_weight='balanced', dual=False,
+          fit_intercept=True, intercept_scaling=1, max_iter=100,
+          multi_class='ovr', n_jobs=4, penalty='l2', random_state=None,
+          solver='sag', tol=0.0001, verbose=0, warm_start=False)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.102 	0.014 	0.000 	0.550 	0.316 	0.109
+[[ 177 1590]
+ [   0    3]]
+             precision    recall  f1-score   support
+
+          0       1.00      0.10      0.18      1767
+          1       0.00      1.00      0.00         3
+
+avg / total       1.00      0.10      0.18      1770
+
+
+Running GridSearchCV for SGDClassifier.
+Fitting 5 folds for each of 2700 candidates, totalling 13500 fits
+BEST: SGDClassifier(alpha=0.0001, average=False, class_weight={1: 3}, epsilon=0.1,
+       eta0=0.5, fit_intercept=True, l1_ratio=0.15,
+       learning_rate='invscaling', loss='modified_huber', n_iter=5,
+       n_jobs=4, penalty='l2', power_t=0.5, random_state=None,
+       shuffle=True, verbose=0, warm_start=False)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.098 	0.013 	0.000 	0.548 	0.310 	0.105
+[[ 170 1597]
+ [   0    3]]
+             precision    recall  f1-score   support
+
+          0       1.00      0.10      0.18      1767
+          1       0.00      1.00      0.00         3
+
+avg / total       1.00      0.10      0.18      1770
+
+
+Running GridSearchCV for ExtraTreesClassifier.
+Fitting 5 folds for each of 360 candidates, totalling 1800 fits
+BEST: ExtraTreesClassifier(bootstrap=False, class_weight={1: 3}, criterion='gini',
+           max_depth=8, max_features='auto', max_leaf_nodes=None,
+           min_impurity_split=1e-07, min_samples_leaf=1,
+           min_samples_split=2, min_weight_fraction_leaf=0.0,
+           n_estimators=15, n_jobs=4, oob_score=False, random_state=None,
+           verbose=0, warm_start=False)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.112 	0.015 	0.000 	0.555 	0.333 	0.121
+[[ 196 1571]
+ [   0    3]]
+             precision    recall  f1-score   support
+
+          0       1.00      0.11      0.20      1767
+          1       0.00      1.00      0.00         3
+
+avg / total       1.00      0.11      0.20      1770
+
+
+Running GridSearchCV for RandomForestClassifier.
+Fitting 5 folds for each of 360 candidates, totalling 1800 fits
+BEST: RandomForestClassifier(bootstrap=True, class_weight={1: 3}, criterion='gini',
+            max_depth=8, max_features='auto', max_leaf_nodes=None,
+            min_impurity_split=1e-07, min_samples_leaf=1,
+            min_samples_split=2, min_weight_fraction_leaf=0.0,
+            n_estimators=15, n_jobs=4, oob_score=False, random_state=None,
+            verbose=0, warm_start=False)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.098 	0.013 	0.000 	0.548 	0.310 	0.105
+[[ 170 1597]
+ [   0    3]]
+             precision    recall  f1-score   support
+
+          0       1.00      0.10      0.18      1767
+          1       0.00      1.00      0.00         3
+
+avg / total       1.00      0.10      0.18      1770
+
+
+Running GridSearchCV for MLPClassifier.
+Fitting 5 folds for each of 48 candidates, totalling 240 fits
+BEST: MLPClassifier(activation='tanh', alpha=0.001, batch_size='auto', beta_1=0.9,
+       beta_2=0.999, early_stopping=False, epsilon=1e-08,
+       hidden_layer_sizes=(240, 40), learning_rate='adaptive',
+       learning_rate_init=0.001, max_iter=200, momentum=0.9,
+       nesterovs_momentum=True, power_t=0.5, random_state=None,
+       shuffle=True, solver='lbfgs', tol=0.0001, validation_fraction=0.1,
+       verbose=False, warm_start=False)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.098 	0.013 	0.000 	0.548 	0.310 	0.105
+[[ 170 1597]
+ [   0    3]]
+             precision    recall  f1-score   support
+
+          0       1.00      0.10      0.18      1767
+          1       0.00      1.00      0.00         3
+
+avg / total       1.00      0.10      0.18      1770
+
+
+Running GridSearchCV for AdaBoostClassifier.
+Fitting 5 folds for each of 576 candidates, totalling 2880 fits
+BEST: AdaBoostClassifier(algorithm='SAMME.R',
+          base_estimator=DecisionTreeClassifier(class_weight='balanced', criterion='entropy',
+            max_depth=16, max_features=None, max_leaf_nodes=None,
+            min_impurity_split=1e-07, min_samples_leaf=1,
+            min_samples_split=2, min_weight_fraction_leaf=0.0,
+            presort=False, random_state=None, splitter='random'),
+          learning_rate=0.5, n_estimators=50, random_state=None)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.296 	0.027 	0.001 	0.647 	0.543 	0.316
+[[ 521 1246]
+ [   0    3]]
+             precision    recall  f1-score   support
+
+          0       1.00      0.29      0.46      1767
+          1       0.00      1.00      0.00         3
+
+avg / total       1.00      0.30      0.45      1770
+
+
+Running GridSearchCV for SVC.
+Fitting 5 folds for each of 160 candidates, totalling 800 fits
+BEST: SVC(C=0.01, cache_size=200, class_weight='balanced', coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma=10, kernel='rbf',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.250 	0.024 	0.001 	0.625 	0.499 	0.268
+[[ 440 1327]
+ [   0    3]]
+             precision    recall  f1-score   support
+
+          0       1.00      0.25      0.40      1767
+          1       0.00      1.00      0.00         3
+
+avg / total       1.00      0.25      0.40      1770
+
+
+Running GridSearchCV for VotingClassifier.
+Fitting 5 folds for each of 216 candidates, totalling 1080 fits
+BEST: VotingClassifier(estimators=[('lr', LogisticRegression(C=0.1, class_weight={1: 15}, dual=False,
+          fit_intercept=True, intercept_scaling=1, max_iter=100,
+          multi_class='ovr', n_jobs=4, penalty='l2', random_state=None,
+          solver='liblinear', tol=0.0001, verbose=0, warm_start=False)), ('rf', Rand...wski',
+           metric_params=None, n_jobs=4, n_neighbors=2, p=2,
+           weights='distance'))],
+         n_jobs=4, voting='soft', weights=[1, 1, 1])
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.098 	0.013 	0.000 	0.548 	0.310 	0.105
+[[ 170 1597]
+ [   0    3]]
+             precision    recall  f1-score   support
+
+          0       1.00      0.10      0.18      1767
+          1       0.00      1.00      0.00         3
+
+avg / total       1.00      0.10      0.18      1770
+
+
+Running GridSearchCV for KNeighborsClassifier.
+Fitting 5 folds for each of 96 candidates, totalling 480 fits
+BEST: KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski',
+           metric_params=None, n_jobs=4, n_neighbors=4, p=3,
+           weights='uniform')
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.244 	0.023 	0.001 	0.621 	0.492 	0.261
+[[ 428 1339]
+ [   0    3]]
+             precision    recall  f1-score   support
+
+          0       1.00      0.24      0.39      1767
+          1       0.00      1.00      0.00         3
+
+avg / total       1.00      0.24      0.39      1770
+
+
+                estimator min_score mean_score max_score    sd_score  \
+6      AdaBoostClassifier  0.577255    0.75172  0.926777   0.0526726   
+7                     SVC         0   0.623908  0.926777    0.310486   
+9    KNeighborsClassifier   0.76011   0.813561  0.926777   0.0472011   
+3    ExtraTreesClassifier  0.861803   0.921001  0.926777   0.0184903   
+1      LogisticRegression         0   0.505665  0.856335    0.309903   
+0              GaussianNB  0.853553   0.853553  0.853553           0   
+2           SGDClassifier -0.176777   0.500718  0.856335    0.222543   
+4  RandomForestClassifier  0.783112   0.852184  0.853553  0.00972665   
+5           MLPClassifier  0.861803   0.861803  0.861803           0   
+8        VotingClassifier  0.785893   0.849813  0.856335   0.0204183   
+
+         acc       auc            conf_matrix     f1_c0       f1_c1  \
+6   0.296045  0.647425  [[521, 1246], [0, 3]]   0.45542  0.00479233   
+7   0.250282  0.624505  [[440, 1327], [0, 3]]  0.398731  0.00450113   
+9   0.243503  0.621109  [[428, 1339], [0, 3]]  0.389977  0.00446097   
+3   0.112429  0.555461  [[196, 1571], [0, 3]]  0.199694  0.00380469   
+1   0.101695  0.550085  [[177, 1590], [0, 3]]  0.182099   0.0037594   
+0  0.0977401  0.548104  [[170, 1597], [0, 3]]  0.175529  0.00374298   
+2  0.0977401  0.548104  [[170, 1597], [0, 3]]  0.175529  0.00374298   
+4  0.0977401  0.548104  [[170, 1597], [0, 3]]  0.175529  0.00374298   
+5  0.0977401  0.548104  [[170, 1597], [0, 3]]  0.175529  0.00374298   
+8  0.0977401  0.548104  [[170, 1597], [0, 3]]  0.175529  0.00374298   
+
+         kappa model_score prec_c0     prec_c1     rec_c0 rec_c1  
+6   0.00141541   0.0266122       1  0.00240192    0.29485      1  
+7   0.00112272   0.0236997       1  0.00225564    0.24901      1  
+9   0.00108236   0.0232695       1  0.00223547   0.242218      1  
+3  0.000422741   0.0145401       1  0.00190597   0.110922      1  
+1  0.000377216   0.0137348       1  0.00188324    0.10017      1  
+0  0.000360716    0.013431       1    0.001875  0.0962083      1  
+2  0.000360716    0.013431       1    0.001875  0.0962083      1  
+4  0.000360716    0.013431       1    0.001875  0.0962083      1  
+5  0.000360716    0.013431       1    0.001875  0.0962083      1  
+8  0.000360716    0.013431       1    0.001875  0.0962083      1  
+Elapsed time 62.14 mins 
+
+************************************************************
+
+pre/post: 5/0  win/stride: 2000/5  label:start 
+filename: stm_sb_modified.csv (feature set prepared earlier) 
+datetime: 2017-04-24 17:00:57.261000 
+pca_target: 0 	 poly degree: 2 	 kselect: 80 
+Imbalance: None 
+Extended target (count):  31485 13
+('Total : Processed (count): ', (5897L, 24976L), 15)
+Final feature (count):  (5897L, 24976L)
+Running GridSearchCV for GaussianNB.
+Fitting 5 folds for each of 1 candidates, totalling 5 fits
+BEST: GaussianNB(priors=None)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.827 	0.017 	0.003 	0.580 	0.525 	0.262
+[[1462  305]
+ [   2    1]]
+             precision    recall  f1-score   support
+
+          0       1.00      0.83      0.90      1767
+          1       0.00      0.33      0.01         3
+
+avg / total       1.00      0.83      0.90      1770
+
+
+Running GridSearchCV for LogisticRegression.
+Fitting 5 folds for each of 450 candidates, totalling 2250 fits
+BEST: LogisticRegression(C=5, class_weight={1: 50}, dual=False, fit_intercept=True,
+          intercept_scaling=0.1, max_iter=100, multi_class='ovr', n_jobs=4,
+          penalty='l2', random_state=None, solver='liblinear', tol=0.0001,
+          verbose=0, warm_start=False)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.981 	-0.005 	-0.003 	0.492 	0.000 	0.000
+[[1737   30]
+ [   3    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      0.98      0.99      1767
+          1       0.00      0.00      0.00         3
+
+avg / total       1.00      0.98      0.99      1770
+
+
+Running GridSearchCV for SGDClassifier.
+Fitting 5 folds for each of 2700 candidates, totalling 13500 fits
+BEST: SGDClassifier(alpha=0.001, average=False, class_weight={1: 15}, epsilon=0.1,
+       eta0=0.001, fit_intercept=True, l1_ratio=0.15,
+       learning_rate='invscaling', loss='squared_hinge', n_iter=5,
+       n_jobs=4, penalty='l1', power_t=0.5, random_state=None,
+       shuffle=True, verbose=0, warm_start=False)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.998 	0.000 	0.000 	0.500 	0.000 	0.000
+[[1767    0]
+ [   3    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1767
+          1       0.00      0.00      0.00         3
+
+avg / total       1.00      1.00      1.00      1770
+
+
+Running GridSearchCV for ExtraTreesClassifier.
+Fitting 5 folds for each of 360 candidates, totalling 1800 fits
+BEST: ExtraTreesClassifier(bootstrap=False, class_weight={1: 50}, criterion='gini',
+           max_depth=8, max_features='auto', max_leaf_nodes=None,
+           min_impurity_split=1e-07, min_samples_leaf=1,
+           min_samples_split=2, min_weight_fraction_leaf=0.0,
+           n_estimators=30, n_jobs=4, oob_score=False, random_state=None,
+           verbose=0, warm_start=False)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.997 	-0.002 	-0.002 	0.499 	0.000 	0.000
+[[1764    3]
+ [   3    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1767
+          1       0.00      0.00      0.00         3
+
+avg / total       1.00      1.00      1.00      1770
+
+
+Running GridSearchCV for RandomForestClassifier.
+Fitting 5 folds for each of 360 candidates, totalling 1800 fits
+BEST: RandomForestClassifier(bootstrap=True, class_weight='balanced',
+            criterion='gini', max_depth=16, max_features='auto',
+            max_leaf_nodes=None, min_impurity_split=1e-07,
+            min_samples_leaf=1, min_samples_split=2,
+            min_weight_fraction_leaf=0.0, n_estimators=15, n_jobs=4,
+            oob_score=False, random_state=None, verbose=0,
+            warm_start=False)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.997 	-0.001 	-0.001 	0.499 	0.000 	0.000
+[[1765    2]
+ [   3    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1767
+          1       0.00      0.00      0.00         3
+
+avg / total       1.00      1.00      1.00      1770
+
+
+Running GridSearchCV for MLPClassifier.
+Fitting 5 folds for each of 48 candidates, totalling 240 fits
+BEST: MLPClassifier(activation='tanh', alpha=0.01, batch_size='auto', beta_1=0.9,
+       beta_2=0.999, early_stopping=False, epsilon=1e-08,
+       hidden_layer_sizes=(240, 40), learning_rate='invscaling',
+       learning_rate_init=0.001, max_iter=200, momentum=0.9,
+       nesterovs_momentum=True, power_t=0.5, random_state=None,
+       shuffle=True, solver='lbfgs', tol=0.0001, validation_fraction=0.1,
+       verbose=False, warm_start=False)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.996 	-0.002 	-0.002 	0.499 	0.000 	0.000
+[[1763    4]
+ [   3    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1767
+          1       0.00      0.00      0.00         3
+
+avg / total       1.00      1.00      1.00      1770
+
+
+Running GridSearchCV for AdaBoostClassifier.
+Fitting 5 folds for each of 576 candidates, totalling 2880 fits
+BEST: AdaBoostClassifier(algorithm='SAMME.R',
+          base_estimator=DecisionTreeClassifier(class_weight={1: 500}, criterion='entropy',
+            max_depth=4, max_features=None, max_leaf_nodes=None,
+            min_impurity_split=1e-07, min_samples_leaf=1,
+            min_samples_split=2, min_weight_fraction_leaf=0.0,
+            presort=False, random_state=None, splitter='random'),
+          learning_rate=1.0, n_estimators=50, random_state=None)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.998 	-0.001 	-0.001 	0.500 	0.000 	0.000
+[[1766    1]
+ [   3    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1767
+          1       0.00      0.00      0.00         3
+
+avg / total       1.00      1.00      1.00      1770
+
+
+Running GridSearchCV for SVC.
+Fitting 5 folds for each of 160 candidates, totalling 800 fits
+BEST: SVC(C=1, cache_size=200, class_weight={1: 3}, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma=1, kernel='rbf',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.997 	-0.001 	-0.001 	0.499 	0.000 	0.000
+[[1765    2]
+ [   3    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1767
+          1       0.00      0.00      0.00         3
+
+avg / total       1.00      1.00      1.00      1770
+
+
+Running GridSearchCV for VotingClassifier.
+Fitting 5 folds for each of 216 candidates, totalling 1080 fits
+BEST: VotingClassifier(estimators=[('lr', LogisticRegression(C=10.0, class_weight='balanced', dual=False,
+          fit_intercept=True, intercept_scaling=1, max_iter=100,
+          multi_class='ovr', n_jobs=4, penalty='l2', random_state=None,
+          solver='liblinear', tol=0.0001, verbose=0, warm_start=False)), ('rf', ...owski',
+           metric_params=None, n_jobs=4, n_neighbors=2, p=2,
+           weights='uniform'))],
+         n_jobs=4, voting='soft', weights=[1, 1, 1])
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.997 	-0.002 	-0.002 	0.499 	0.000 	0.000
+[[1764    3]
+ [   3    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1767
+          1       0.00      0.00      0.00         3
+
+avg / total       1.00      1.00      1.00      1770
+
+
+Running GridSearchCV for KNeighborsClassifier.
+Fitting 5 folds for each of 96 candidates, totalling 480 fits
+BEST: KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski',
+           metric_params=None, n_jobs=4, n_neighbors=1, p=1,
+           weights='distance')
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.997 	0.287 	0.284 	0.666 	0.577 	0.311
+[[1764    3]
+ [   2    1]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1767
+          1       0.25      0.33      0.29         3
+
+avg / total       1.00      1.00      1.00      1770
+
+
+                estimator   min_score mean_score  max_score   sd_score  \
+9    KNeighborsClassifier -0.00159309  0.0909185   0.317698    0.12408   
+0              GaussianNB   0.0571656  0.0571656  0.0571656          0   
+2           SGDClassifier  -0.0647007  0.0141041   0.145524   0.019216   
+6      AdaBoostClassifier -0.00359012    0.18231   0.508019   0.102737   
+4  RandomForestClassifier -0.00294397  0.0473422   0.256681   0.063103   
+7                     SVC -0.00139229  0.0979903   0.403699   0.075385   
+3    ExtraTreesClassifier -0.00187131   0.303414   0.537138  0.0838507   
+8        VotingClassifier -0.00187131   0.157476   0.395847   0.124508   
+5           MLPClassifier -0.00196977   0.162599    0.32854  0.0750209   
+1      LogisticRegression  -0.0204594  0.0418281   0.173148  0.0401805   
+
+        acc       auc            conf_matrix     f1_c0       f1_c1  \
+9  0.997175  0.665818    [[1764, 3], [2, 1]]  0.998585    0.285714   
+0  0.826554  0.580362  [[1462, 305], [2, 1]]  0.904983  0.00647249   
+2  0.998305       0.5    [[1767, 0], [3, 0]]  0.999152           0   
+6   0.99774  0.499717    [[1766, 1], [3, 0]]  0.998869           0   
+4  0.997175  0.499434    [[1765, 2], [3, 0]]  0.998586           0   
+7  0.997175  0.499434    [[1765, 2], [3, 0]]  0.998586           0   
+3   0.99661  0.499151    [[1764, 3], [3, 0]]  0.998302           0   
+8   0.99661  0.499151    [[1764, 3], [3, 0]]  0.998302           0   
+5  0.996045  0.498868    [[1763, 4], [3, 0]]  0.998019           0   
+1  0.981356  0.491511   [[1737, 30], [3, 0]]   0.99059           0   
+
+         kappa  model_score   prec_c0     prec_c1    rec_c0    rec_c1  
+9     0.284328     0.287286  0.998867        0.25  0.998302  0.333333  
+0   0.00312607    0.0174835  0.998634  0.00326797  0.827391  0.333333  
+2            0            0  0.998305           0         1         0  
+6 -0.000848176 -0.000979667  0.998304           0  0.999434         0  
+4  -0.00135777  -0.00138585  0.998303           0  0.998868         0  
+7  -0.00135777  -0.00138585  0.998303           0  0.998868         0  
+3  -0.00169779  -0.00169779  0.998302           0  0.998302         0  
+8  -0.00169779  -0.00169779  0.998302           0  0.998302         0  
+5  -0.00194081    -0.001961  0.998301           0  0.997736         0  
+1  -0.00309119  -0.00541039  0.998276           0  0.983022         0  
+Elapsed time 124.21 mins 
+
+************************************************************
+
+[4;33mReloaded modules[24m: migraine_processing, classifiers[0m
+Finished.
+
+
+
+
+    pca = [80]
+    poly = [2]
+    ksel = [60]
+    imb = [None]
+	
+	
+	
+	
+pre/post: 5/0  win/stride: 2000/5  label:start 
+filename: stm_sb_modified.csv (feature set prepared earlier) 
+datetime: 2017-04-24 19:07:34.039000 
+pca_target: 80 	 poly degree: 2 	 kselect: 60 
+Imbalance: None 
+Extended target (count):  31485 13
+('Total : Processed (count): ', (5897L, 24976L), 15)
+Final feature (count):  (5897L, 24976L)
+Running GridSearchCV for GaussianNB.
+Fitting 5 folds for each of 1 candidates, totalling 5 fits
+BEST: GaussianNB(priors=None)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.905 	-0.013 	-0.003 	0.453 	0.000 	0.000
+[[1602  165]
+ [   3    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      0.91      0.95      1767
+          1       0.00      0.00      0.00         3
+
+avg / total       1.00      0.91      0.95      1770
+
+
+Running GridSearchCV for LogisticRegression.
+Fitting 5 folds for each of 450 candidates, totalling 2250 fits
+BEST: LogisticRegression(C=10, class_weight={1: 15}, dual=False, fit_intercept=True,
+          intercept_scaling=0.1, max_iter=100, multi_class='ovr', n_jobs=4,
+          penalty='l2', random_state=None, solver='liblinear', tol=0.0001,
+          verbose=0, warm_start=False)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.992 	-0.003 	-0.003 	0.497 	0.000 	0.000
+[[1756   11]
+ [   3    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      0.99      1.00      1767
+          1       0.00      0.00      0.00         3
+
+avg / total       1.00      0.99      0.99      1770
+
+
+Running GridSearchCV for SGDClassifier.
+Fitting 5 folds for each of 2700 candidates, totalling 13500 fits
+BEST: SGDClassifier(alpha=1, average=False, class_weight={1: 15}, epsilon=0.1,
+       eta0=0.5, fit_intercept=True, l1_ratio=0.15,
+       learning_rate='invscaling', loss='squared_hinge', n_iter=5,
+       n_jobs=4, penalty='l2', power_t=0.5, random_state=None,
+       shuffle=True, verbose=0, warm_start=False)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.998 	0.000 	0.000 	0.500 	0.000 	0.000
+[[1767    0]
+ [   3    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1767
+          1       0.00      0.00      0.00         3
+
+avg / total       1.00      1.00      1.00      1770
+
+
+Running GridSearchCV for ExtraTreesClassifier.
+Fitting 5 folds for each of 360 candidates, totalling 1800 fits
+BEST: ExtraTreesClassifier(bootstrap=False, class_weight={1: 3}, criterion='gini',
+           max_depth=16, max_features='auto', max_leaf_nodes=None,
+           min_impurity_split=1e-07, min_samples_leaf=1,
+           min_samples_split=2, min_weight_fraction_leaf=0.0,
+           n_estimators=50, n_jobs=4, oob_score=False, random_state=None,
+           verbose=0, warm_start=False)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.998 	-0.001 	-0.001 	0.500 	0.000 	0.000
+[[1766    1]
+ [   3    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1767
+          1       0.00      0.00      0.00         3
+
+avg / total       1.00      1.00      1.00      1770
+
+
+Running GridSearchCV for RandomForestClassifier.
+Fitting 5 folds for each of 360 candidates, totalling 1800 fits
+BEST: RandomForestClassifier(bootstrap=True, class_weight={1: 15}, criterion='gini',
+            max_depth=None, max_features=0.75, max_leaf_nodes=None,
+            min_impurity_split=1e-07, min_samples_leaf=1,
+            min_samples_split=2, min_weight_fraction_leaf=0.0,
+            n_estimators=30, n_jobs=4, oob_score=False, random_state=None,
+            verbose=0, warm_start=False)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.998 	-0.001 	-0.001 	0.500 	0.000 	0.000
+[[1766    1]
+ [   3    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1767
+          1       0.00      0.00      0.00         3
+
+avg / total       1.00      1.00      1.00      1770
+
+
+Running GridSearchCV for MLPClassifier.
+Fitting 5 folds for each of 48 candidates, totalling 240 fits
+BEST: MLPClassifier(activation='relu', alpha=0.1, batch_size='auto', beta_1=0.9,
+       beta_2=0.999, early_stopping=False, epsilon=1e-08,
+       hidden_layer_sizes=(240, 40), learning_rate='invscaling',
+       learning_rate_init=0.001, max_iter=200, momentum=0.9,
+       nesterovs_momentum=True, power_t=0.5, random_state=None,
+       shuffle=True, solver='lbfgs', tol=0.0001, validation_fraction=0.1,
+       verbose=False, warm_start=False)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.996 	-0.002 	-0.002 	0.499 	0.000 	0.000
+[[1763    4]
+ [   3    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1767
+          1       0.00      0.00      0.00         3
+
+avg / total       1.00      1.00      1.00      1770
+
+
+Running GridSearchCV for AdaBoostClassifier.
+Fitting 5 folds for each of 576 candidates, totalling 2880 fits
+BEST: AdaBoostClassifier(algorithm='SAMME.R',
+          base_estimator=DecisionTreeClassifier(class_weight='balanced', criterion='gini',
+            max_depth=16, max_features=None, max_leaf_nodes=None,
+            min_impurity_split=1e-07, min_samples_leaf=1,
+            min_samples_split=2, min_weight_fraction_leaf=0.0,
+            presort=False, random_state=None, splitter='random'),
+          learning_rate=2.0, n_estimators=50, random_state=None)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.996 	-0.002 	-0.002 	0.499 	0.000 	0.000
+[[1763    4]
+ [   3    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1767
+          1       0.00      0.00      0.00         3
+
+avg / total       1.00      1.00      1.00      1770
+
+
+Running GridSearchCV for SVC.
+Fitting 5 folds for each of 160 candidates, totalling 800 fits
+BEST: SVC(C=0.01, cache_size=200, class_weight={1: 500}, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma=1, kernel='rbf',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.998 	0.000 	0.000 	0.500 	0.000 	0.000
+[[1767    0]
+ [   3    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1767
+          1       0.00      0.00      0.00         3
+
+avg / total       1.00      1.00      1.00      1770
+
+
+Running GridSearchCV for VotingClassifier.
+Fitting 5 folds for each of 216 candidates, totalling 1080 fits
+BEST: VotingClassifier(estimators=[('lr', LogisticRegression(C=0.1, class_weight={1: 500}, dual=False,
+          fit_intercept=True, intercept_scaling=1, max_iter=100,
+          multi_class='ovr', n_jobs=4, penalty='l2', random_state=None,
+          solver='liblinear', tol=0.0001, verbose=0, warm_start=False)), ('rf', Ran...wski',
+           metric_params=None, n_jobs=4, n_neighbors=4, p=2,
+           weights='distance'))],
+         n_jobs=4, voting='soft', weights=[1, 1, 1])
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.997 	-0.002 	-0.002 	0.499 	0.000 	0.000
+[[1764    3]
+ [   3    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1767
+          1       0.00      0.00      0.00         3
+
+avg / total       1.00      1.00      1.00      1770
+
+
+Running GridSearchCV for KNeighborsClassifier.
+Fitting 5 folds for each of 96 candidates, totalling 480 fits
+BEST: KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski',
+           metric_params=None, n_jobs=4, n_neighbors=5, p=2,
+           weights='distance')
+	 ACC 	 MCC 	 KAP 	 AUC 	 GEOM 	 IBA
+	0.998 	0.000 	0.000 	0.500 	0.000 	0.000
+[[1767    0]
+ [   3    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1767
+          1       0.00      0.00      0.00         3
+
+avg / total       1.00      1.00      1.00      1770
+
+
+                estimator    min_score mean_score  max_score   sd_score  \
+2           SGDClassifier   -0.0780962  0.0169173   0.131353  0.0212446   
+7                     SVC -0.000595332  0.0916227   0.230828  0.0737588   
+9    KNeighborsClassifier  -0.00142442   0.104097   0.230828   0.105022   
+3    ExtraTreesClassifier            0   0.218097   0.278733  0.0472012   
+4  RandomForestClassifier   -0.0011073  0.0168862   0.230141   0.042883   
+8        VotingClassifier   -0.0011073   0.152062   0.378441   0.108615   
+5           MLPClassifier    0.0550177   0.131656   0.276865   0.038819   
+6      AdaBoostClassifier   -0.0038883   0.129234   0.337071  0.0785785   
+1      LogisticRegression  -0.00840417  0.0513126   0.229773   0.044777   
+0              GaussianNB    0.0963879  0.0963879  0.0963879          0   
+
+        acc       auc            conf_matrix     f1_c0 f1_c1        kappa  \
+2  0.998305       0.5    [[1767, 0], [3, 0]]  0.999152     0            0   
+7  0.998305       0.5    [[1767, 0], [3, 0]]  0.999152     0            0   
+9  0.998305       0.5    [[1767, 0], [3, 0]]  0.999152     0            0   
+3   0.99774  0.499717    [[1766, 1], [3, 0]]  0.998869     0 -0.000848176   
+4   0.99774  0.499717    [[1766, 1], [3, 0]]  0.998869     0 -0.000848176   
+8   0.99661  0.499151    [[1764, 3], [3, 0]]  0.998302     0  -0.00169779   
+5  0.996045  0.498868    [[1763, 4], [3, 0]]  0.998019     0  -0.00194081   
+6  0.996045  0.498868    [[1763, 4], [3, 0]]  0.998019     0  -0.00194081   
+1   0.99209  0.496887   [[1756, 11], [3, 0]]  0.996029     0  -0.00267055   
+0  0.905085  0.453311  [[1602, 165], [3, 0]]  0.950178     0  -0.00334042   
+
+   model_score   prec_c0 prec_c1    rec_c0 rec_c1  
+2            0  0.998305       0         1      0  
+7            0  0.998305       0         1      0  
+9            0  0.998305       0         1      0  
+3 -0.000979667  0.998304       0  0.999434      0  
+4 -0.000979667  0.998304       0  0.999434      0  
+8  -0.00169779  0.998302       0  0.998302      0  
+5    -0.001961  0.998301       0  0.997736      0  
+6    -0.001961  0.998301       0  0.997736      0  
+1  -0.00325841  0.998294       0  0.993775      0  
+0   -0.0132113  0.998131       0  0.906621      0  
+Elapsed time 237.67 mins 
+
+************************************************************
+
+[4;33mReloaded modules[24m: migraine_processing, classifiers[0m
+Finished.
+
+
+
+[4;33mReloaded modules[24m: migraine_processing, classifiers[0m

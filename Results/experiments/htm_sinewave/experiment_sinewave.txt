@@ -1,0 +1,21 @@
+
+df = pd.read_table("APD_acvout_sinewave240cut.csv", sep=',', parse_dates=True, infer_datetime_format=True, index_col=0, na_filter=False)
+
+df.a_score[df.a_score>0.4].count(), df.a_score[df.a_score>0.4].mean()
+Out[6]: (65, 0.752692309251154)
+
+
+
+
+
+df = pd.read_table("APD_acvout_sinewave240cut.csv", sep=',', parse_dates=True, infer_datetime_format=True, index_col=0, na_filter=False)
+df.a_score[df.a_score>0.4].count(); df.a_score[df.a_score>0.4].mean()
+df.a_score[df.a_score>0.4].count(), df.a_score[df.a_score>0.4].mean()
+df['a_score'][10:4500].plot(figsize=(10,5)); df.value[10:4500].plot(secondary_y=True)
+df['a_score'][10:1500].plot(figsize=(10,5)); df.value[10:1500].plot(secondary_y=True)
+
+
+
+df['a_score'][3800:4200].plot(grid=True, figsize=(10,4)); df.value[3800:4200].plot(alpha=0.8, grid=True, title="Anomaly alert #2 (delta model)", secondary_y=True)
+
+df['a_score'][2800:3200].plot(grid=True, figsize=(10,4)); df.value[2800:3200].plot(alpha=0.8, grid=True, title="Regular sinusoid pattern vs Raw Anomaly score with anomaly", secondary_y=True)

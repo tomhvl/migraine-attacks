@@ -1,0 +1,299 @@
+
+
+pre/post: 0/5  win/stride: 2000/5  label:end
+Total:Target (count):  31485 78
+Feature Extraction: 100%|██████████| 1/1 [34:56:19<00:00, 125779.56s/it]
+('Total : Processed (count): ', (5897L, 217L), 15)
+Running GridSearchCV for GaussianNB.
+Fitting 5 folds for each of 1 candidates, totalling 5 fits
+[Parallel(n_jobs=4)]: Done   5 out of   5 | elapsed:    6.0s finished
+BEST: GaussianNB(priors=None)
+         ACC     MCC     KAP     AUC
+        0.648   0.018   0.003   0.574
+[[1144  620]
+ [   3    3]]
+             precision    recall  f1-score   support
+
+          0       1.00      0.65      0.79      1764
+          1       0.00      0.50      0.01         6
+
+avg / total       0.99      0.65      0.78      1770
+
+
+Running GridSearchCV for LogisticRegression.
+Fitting 5 folds for each of 360 candidates, totalling 1800 fits
+[Parallel(n_jobs=4)]: Done  33 tasks      | elapsed:    6.3s
+[Parallel(n_jobs=4)]: Done 154 tasks      | elapsed:   20.2s
+[Parallel(n_jobs=4)]: Done 357 tasks      | elapsed:   52.5s
+[Parallel(n_jobs=4)]: Done 640 tasks      | elapsed:  1.7min
+[Parallel(n_jobs=4)]: Done 1005 tasks      | elapsed:  3.2min
+[Parallel(n_jobs=4)]: Done 1450 tasks      | elapsed:  6.0min
+[Parallel(n_jobs=4)]: Done 1800 out of 1800 | elapsed:  8.8min finished
+BEST: LogisticRegression(C=5, class_weight={1: 15}, dual=False, fit_intercept=True,
+          intercept_scaling=1, max_iter=100, multi_class='ovr', n_jobs=4,
+          penalty='l2', random_state=None, solver='liblinear', tol=0.0001,
+          verbose=0, warm_start=False)
+         ACC     MCC     KAP     AUC
+        0.992   0.223   0.207   0.664
+[[1753   11]
+ [   4    2]]
+             precision    recall  f1-score   support
+
+          0       1.00      0.99      1.00      1764
+          1       0.15      0.33      0.21         6
+
+avg / total       0.99      0.99      0.99      1770
+
+
+Running GridSearchCV for SGDClassifier.
+Fitting 5 folds for each of 2700 candidates, totalling 13500 fits
+[Parallel(n_jobs=4)]: Done  33 tasks      | elapsed:    2.7s
+[Parallel(n_jobs=4)]: Done 268 tasks      | elapsed:    7.7s
+[Parallel(n_jobs=4)]: Done 674 tasks      | elapsed:   16.3s
+[Parallel(n_jobs=4)]: Done 1240 tasks      | elapsed:   28.2s
+[Parallel(n_jobs=4)]: Done 1970 tasks      | elapsed:   43.8s
+[Parallel(n_jobs=4)]: Done 2860 tasks      | elapsed:  1.1min
+[Parallel(n_jobs=4)]: Done 3914 tasks      | elapsed:  1.4min
+[Parallel(n_jobs=4)]: Done 5128 tasks      | elapsed:  1.9min
+[Parallel(n_jobs=4)]: Done 6506 tasks      | elapsed:  2.3min
+[Parallel(n_jobs=4)]: Done 8044 tasks      | elapsed:  2.8min
+[Parallel(n_jobs=4)]: Done 9746 tasks      | elapsed:  3.4min
+[Parallel(n_jobs=4)]: Done 11608 tasks      | elapsed:  4.0min
+[Parallel(n_jobs=4)]: Done 13500 out of 13500 | elapsed:  4.6min finished
+BEST: SGDClassifier(alpha=0.0001, average=False, class_weight={1: 3}, epsilon=0.1,
+       eta0=0.5, fit_intercept=True, l1_ratio=0.15,
+       learning_rate='invscaling', loss='modified_huber', n_iter=5,
+       n_jobs=4, penalty='none', power_t=0.5, random_state=None,
+       shuffle=True, verbose=0, warm_start=False)
+         ACC     MCC     KAP     AUC
+        0.992   0.119   0.114   0.580
+[[1754   10]
+ [   5    1]]
+             precision    recall  f1-score   support
+
+          0       1.00      0.99      1.00      1764
+          1       0.09      0.17      0.12         6
+
+avg / total       0.99      0.99      0.99      1770
+
+
+Running GridSearchCV for ExtraTreesClassifier.
+Fitting 5 folds for each of 360 candidates, totalling 1800 fits
+[Parallel(n_jobs=4)]: Done  33 tasks      | elapsed:    9.5s
+[Parallel(n_jobs=4)]: Done 154 tasks      | elapsed:   35.7s
+[Parallel(n_jobs=4)]: Done 357 tasks      | elapsed:  1.3min
+[Parallel(n_jobs=4)]: Done 640 tasks      | elapsed:  2.3min
+[Parallel(n_jobs=4)]: Done 1005 tasks      | elapsed:  3.6min
+[Parallel(n_jobs=4)]: Done 1450 tasks      | elapsed:  5.1min
+[Parallel(n_jobs=4)]: Done 1800 out of 1800 | elapsed:  6.3min finished
+BEST: ExtraTreesClassifier(bootstrap=False, class_weight={1: 3}, criterion='gini',
+           max_depth=8, max_features=0.33, max_leaf_nodes=None,
+           min_impurity_split=1e-07, min_samples_leaf=1,
+           min_samples_split=2, min_weight_fraction_leaf=0.0,
+           n_estimators=30, n_jobs=4, oob_score=False, random_state=None,
+           verbose=0, warm_start=False)
+         ACC     MCC     KAP     AUC
+        0.996   -0.001  -0.001  0.500
+[[1763    1]
+ [   6    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1764
+          1       0.00      0.00      0.00         6
+
+avg / total       0.99      1.00      0.99      1770
+
+
+Running GridSearchCV for RandomForestClassifier.
+Fitting 5 folds for each of 360 candidates, totalling 1800 fits
+[Parallel(n_jobs=4)]: Done  33 tasks      | elapsed:   21.5s
+[Parallel(n_jobs=4)]: Done 154 tasks      | elapsed:  1.4min
+[Parallel(n_jobs=4)]: Done 357 tasks      | elapsed:  3.8min
+[Parallel(n_jobs=4)]: Done 640 tasks      | elapsed:  6.5min
+[Parallel(n_jobs=4)]: Done 1005 tasks      | elapsed:  9.8min
+[Parallel(n_jobs=4)]: Done 1450 tasks      | elapsed: 13.3min
+[Parallel(n_jobs=4)]: Done 1800 out of 1800 | elapsed: 16.0min finished
+BEST: RandomForestClassifier(bootstrap=True, class_weight={1: 3}, criterion='gini',
+            max_depth=16, max_features=0.75, max_leaf_nodes=None,
+            min_impurity_split=1e-07, min_samples_leaf=1,
+            min_samples_split=2, min_weight_fraction_leaf=0.0,
+            n_estimators=15, n_jobs=4, oob_score=False, random_state=None,
+            verbose=0, warm_start=False)
+         ACC     MCC     KAP     AUC
+        0.997   0.287   0.249   0.583
+[[1763    1]
+ [   5    1]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1764
+          1       0.50      0.17      0.25         6
+
+avg / total       1.00      1.00      1.00      1770
+
+
+Running GridSearchCV for MLPClassifier.
+Fitting 5 folds for each of 72 candidates, totalling 360 fits
+[Parallel(n_jobs=4)]: Done  33 tasks      | elapsed:  2.7min
+[Parallel(n_jobs=4)]: Done 154 tasks      | elapsed: 16.4min
+[Parallel(n_jobs=4)]: Done 360 out of 360 | elapsed: 41.2min finished
+BEST: MLPClassifier(activation='relu', alpha=0.1, batch_size='auto', beta_1=0.9,
+       beta_2=0.999, early_stopping=False, epsilon=1e-08,
+       hidden_layer_sizes=(240, 40), learning_rate='constant',
+       learning_rate_init=0.001, max_iter=200, momentum=0.9,
+       nesterovs_momentum=True, power_t=0.5, random_state=None,
+       shuffle=True, solver='lbfgs', tol=0.0001, validation_fraction=0.1,
+       verbose=False, warm_start=False)
+         ACC     MCC     KAP     AUC
+        0.995   -0.002  -0.002  0.499
+[[1761    3]
+ [   6    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1764
+          1       0.00      0.00      0.00         6
+
+avg / total       0.99      0.99      0.99      1770
+
+
+Running GridSearchCV for AdaBoostClassifier.
+Fitting 5 folds for each of 768 candidates, totalling 3840 fits
+[Parallel(n_jobs=4)]: Done  33 tasks      | elapsed:   48.3s
+[Parallel(n_jobs=4)]: Done 154 tasks      | elapsed:  1.7min
+[Parallel(n_jobs=4)]: Done 357 tasks      | elapsed:  2.3min
+[Parallel(n_jobs=4)]: Done 640 tasks      | elapsed:  5.5min
+[Parallel(n_jobs=4)]: Done 1085 tasks      | elapsed:  7.8min
+[Parallel(n_jobs=4)]: Done 1530 tasks      | elapsed: 11.3min
+[Parallel(n_jobs=4)]: Done 2057 tasks      | elapsed: 15.8min
+[Parallel(n_jobs=4)]: Done 2664 tasks      | elapsed: 23.2min
+[Parallel(n_jobs=4)]: Done 3361 tasks      | elapsed: 27.4min
+[Parallel(n_jobs=4)]: Done 3840 out of 3840 | elapsed: 33.6min finished
+BEST: AdaBoostClassifier(algorithm='SAMME.R',
+          base_estimator=DecisionTreeClassifier(class_weight={1: 5}, criterion='gini', max_depth=4,
+            max_features=None, max_leaf_nodes=None,
+            min_impurity_split=1e-07, min_samples_leaf=1,
+            min_samples_split=2, min_weight_fraction_leaf=0.0,
+            presort=False, random_state=None, splitter='best'),
+          learning_rate=1.5, n_estimators=50, random_state=None)
+         ACC     MCC     KAP     AUC
+        0.996   -0.001  -0.001  0.500
+[[1763    1]
+ [   6    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1764
+          1       0.00      0.00      0.00         6
+
+avg / total       0.99      1.00      0.99      1770
+
+
+Running GridSearchCV for SVC.
+Fitting 5 folds for each of 200 candidates, totalling 1000 fits
+[Parallel(n_jobs=4)]: Done  33 tasks      | elapsed:   16.9s
+[Parallel(n_jobs=4)]: Done 154 tasks      | elapsed:  2.6min
+[Parallel(n_jobs=4)]: Done 357 tasks      | elapsed:  6.3min
+[Parallel(n_jobs=4)]: Done 640 tasks      | elapsed: 10.8min
+[Parallel(n_jobs=4)]: Done 1000 out of 1000 | elapsed: 16.2min finished
+BEST: SVC(C=0.1, cache_size=200, class_weight={1: 15}, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma=1, kernel='rbf',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+         ACC     MCC     KAP     AUC
+        0.997   0.000   0.000   0.500
+[[1764    0]
+ [   6    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1764
+          1       0.00      0.00      0.00         6
+
+avg / total       0.99      1.00      0.99      1770
+
+
+Running GridSearchCV for VotingClassifier.
+Fitting 5 folds for each of 1536 candidates, totalling 7680 fits
+[Parallel(n_jobs=4)]: Done  33 tasks      | elapsed:  1.3min
+[Parallel(n_jobs=4)]: Done 154 tasks      | elapsed:  6.0min
+[Parallel(n_jobs=4)]: Done 357 tasks      | elapsed: 14.0min
+[Parallel(n_jobs=4)]: Done 640 tasks      | elapsed: 25.4min
+[Parallel(n_jobs=4)]: Done 1005 tasks      | elapsed: 41.5min
+[Parallel(n_jobs=4)]: Done 1450 tasks      | elapsed: 61.0min
+[Parallel(n_jobs=4)]: Done 1977 tasks      | elapsed: 82.4min
+[Parallel(n_jobs=4)]: Done 2584 tasks      | elapsed: 109.9min
+[Parallel(n_jobs=4)]: Done 3273 tasks      | elapsed: 138.4min
+[Parallel(n_jobs=4)]: Done 4042 tasks      | elapsed: 173.0min
+[Parallel(n_jobs=4)]: Done 4893 tasks      | elapsed: 209.9min
+[Parallel(n_jobs=4)]: Done 5824 tasks      | elapsed: 250.7min
+[Parallel(n_jobs=4)]: Done 6837 tasks      | elapsed: 296.2min
+[Parallel(n_jobs=4)]: Done 7680 out of 7680 | elapsed: 335.1min finished
+C:\Users\Tomba\Anaconda2\lib\site-packages\sklearn\externals\joblib\pool.py:438: UserWarning: Failed to clean temporary folder: c:\users\tomba\appdata\local\temp\joblib_memmaping_pool_5244_234265512
+  warnings.warn("Failed to clean temporary folder: %s" % folder_path)
+BEST: VotingClassifier(estimators=[('lr', LogisticRegression(C=50.0, class_weight={1: 5}, dual=False,
+          fit_intercept=True, intercept_scaling=1, max_iter=100,
+          multi_class='ovr', n_jobs=4, penalty='l2', random_state=None,
+          solver='liblinear', tol=0.0001, verbose=0, warm_start=False)), ('rf', Rand...wski',
+           metric_params=None, n_jobs=4, n_neighbors=2, p=2,
+           weights='distance'))],
+         n_jobs=4, voting='hard', weights=[1, 1, 1])
+         ACC     MCC     KAP     AUC
+        0.997   0.000   0.000   0.500
+[[1764    0]
+ [   6    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1764
+          1       0.00      0.00      0.00         6
+
+avg / total       0.99      1.00      0.99      1770
+
+
+Running GridSearchCV for KNeighborsClassifier.
+Fitting 5 folds for each of 48 candidates, totalling 240 fits
+[Parallel(n_jobs=4)]: Done  33 tasks      | elapsed:  4.3min
+[Parallel(n_jobs=4)]: Done 154 tasks      | elapsed: 60.7min
+[Parallel(n_jobs=4)]: Done 240 out of 240 | elapsed: 106.4min finished
+BEST: KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski',
+           metric_params=None, n_jobs=4, n_neighbors=4, p=4,
+           weights='distance')
+         ACC     MCC     KAP     AUC
+        0.997   0.000   0.000   0.500
+[[1764    0]
+ [   6    0]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1764
+          1       0.00      0.00      0.00         6
+
+avg / total       0.99      1.00      0.99      1770
+
+
+                estimator    min_score mean_score  max_score   sd_score  \
+1      LogisticRegression   -0.0136954  0.0324153   0.160577  0.0386318   
+4  RandomForestClassifier -0.000585898  0.0645608   0.282877  0.0945319   
+2           SGDClassifier   -0.0351605  0.0127069   0.214908  0.0234781   
+0              GaussianNB    0.0218506  0.0218506  0.0218506          0   
+7                     SVC  -0.00426619   0.111122   0.282877  0.0947561   
+8        VotingClassifier  -0.00127249   0.156272   0.282877   0.129378   
+9    KNeighborsClassifier -0.000938629   0.102217   0.282877   0.117515   
+3    ExtraTreesClassifier -0.000686595   0.200033   0.282877  0.0997757   
+6      AdaBoostClassifier  -0.00409178   0.161895   0.282877  0.0898179   
+5           MLPClassifier    0.0798043   0.216733   0.282291  0.0390877   
+
+        acc       auc            conf_matrix        kappa model_score  \
+1  0.991525  0.663549   [[1753, 11], [4, 2]]     0.206847    0.222661   
+4   0.99661   0.58305    [[1763, 1], [5, 1]]     0.248727    0.287368   
+2  0.991525  0.580499   [[1754, 10], [5, 1]]     0.113759    0.119074   
+0  0.648023  0.574263  [[1144, 620], [3, 3]]   0.00284305    0.018076   
+7   0.99661       0.5    [[1764, 0], [6, 0]]            0           0   
+8   0.99661       0.5    [[1764, 0], [6, 0]]            0           0   
+9   0.99661       0.5    [[1764, 0], [6, 0]]            0           0   
+3  0.996045  0.499717    [[1763, 1], [6, 0]] -0.000969462 -0.00138664   
+6  0.996045  0.499717    [[1763, 1], [6, 0]] -0.000969462 -0.00138664   
+5  0.994915   0.49915    [[1761, 3], [6, 0]]  -0.00226501 -0.00240308   
+
+
+
+******************************************************************************
+
+
+pre/post: 0/5  win/stride: 2000/5  label:start      (synthetic y)
+

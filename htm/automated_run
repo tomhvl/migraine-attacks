@@ -1,0 +1,12 @@
+#!/bin/bash
+clear
+
+echo "Running batch HTM analysis with aggregation step=" "$1" "  function=" "$2"
+
+python activity_experiment.py -f "stm_aasane01_03_modified.csv" -s 4320 -g "$1" -t "$2"
+python activity_experiment.py -f "stm_aasane16_modified.csv" -s 4320 -g "$1" -t "$2"
+python activity_experiment.py -f "stm_aasane18_modified.csv" -s 4320 -g "$1" -t "$2"
+python activity_experiment.py -f "stm_fusa04 (edited).csv" -s 4320 -g "$1" -t "$2"
+python activity_experiment.py -f "stm_sb_modified.csv" -s 4320 -g "$1" -t "$2"
+#python activity_experiment.py -f "stm_kontroll02 (edited).csv" -s 4320 -g "$1" -t "$2"
+#python activity_experiment.py -f "stm_kontroll05 (edited).csv" -s 4320 -g "$1" -t "$2"

@@ -1,0 +1,399 @@
+****************************************************************************
+DTW experiment
+
+Comparison of target sequences, using the fastdtw dynamic time warping alg.
+5 mins before + 90 mins after attack start is included in the queries
+single query is selected (freely), all distances between target sequences
+are calculated and then averaged. This is avg_target_distance.
+The query seq is then used in a search through ALL data (steps of 2, window
+size 90) and for every such segment distance is calculated to our query.
+Finally the number of sequences that had a dist less than our average is 
+printed.
+
+In addtion we take the minimum distance from the same list and get a count
+of how many matches had a score below that. (447)
+
+Next, we take the first few of the lowest scoring matches (the best ones)
+list them and view.
+
+
+    df = mig.getCaseData(mig.CASE_NAMES[0])
+    
+    # find distances just among target sequences, then print in sorted order
+    seqpairs = mig.getFlaggedSeqList(df, 5, 90)
+    distances = findDistances(df, seqpairs)
+    avg_target_distance = np.mean(np.array(distances.values()[0]))
+    for k,v in sorted(distances.items()):
+        print k,v
+    
+    seqcoords = mig.getFlaggedSeqList(df, 5, 90)
+    query = df.value[seqcoords[0][0]:seqcoords[0][1]]
+    print query.index[0]
+    distances = findMatches(df, query, size=90, step=2)
+    
+    # distance query is run over whole dataset for chosen slice (query)
+    # distances = findMatches(df, query, size=60, step=15)
+    # distances is now a pd.Series with distances to all windows vs query 
+    # avg_t_dist was the average distance to all other target labelled sequences
+
+    print distances[distances.values<avg_target_distance].count()
+
+	
+	
+2005-03-08 21:58:00 [0.0, 16432.0, 10666.0, 13619.0, 16360.0, 16578.0, 17563.0]
+2005-03-12 18:24:00 [16432.0, 0.0, 18876.0, 20153.0, 17563.0, 14858.0, 17572.0]
+2005-03-15 07:54:00 [10666.0, 18876.0, 0.0, 7873.0, 8360.0, 18553.0, 8877.0]
+2005-03-17 22:54:00 [13619.0, 20153.0, 7873.0, 0.0, 9537.0, 12476.0, 9578.0]
+2005-03-18 06:38:00 [16360.0, 17563.0, 8360.0, 9537.0, 0.0, 14842.0, 8825.0]
+2005-03-19 12:09:00 [16578.0, 14858.0, 18553.0, 12476.0, 14842.0, 0.0, 14479.0]
+2005-03-21 10:24:00 [17563.0, 17572.0, 8877.0, 9578.0, 8825.0, 14479.0, 0.0]
+2005-03-08 21:58:00
+2418
+Total:Target (count):  22147 7   # number of negatives, positives (targets)
+
+
+
+np.min([16432.0, 10666.0, 13619.0, 16360.0, 16578.0, 17563.0])
+Out[119]: 10666.0
+print distances[distances.values<10666.0].count()
+447
+
+
+distances.sort_values().head()
+Out[122]: 
+2005-03-08 21:58:00     260.0
+2005-03-08 22:02:00     655.0
+2005-03-08 22:00:00     728.0
+2005-03-08 21:56:00     887.0
+2005-03-08 21:54:00    1109.0
+dtype: float64
+
+distances.index.get_loc('2005-03-08 21:58:00')
+Out[123]: 359
+
+df.value[359:359+90].plot()
+
+
+np.corrcoef(query.values, df.value[359:359+96].values)
+Out[130]: 
+array([[ 1.        ,  0.06695277],
+       [ 0.06695277,  1.        ]])
+
+************************************************************************
+	df = mig.getCaseData(mig.CASE_NAMES[1])
+    seqpairs = mig.getFlaggedSeqList(df, 15, 105)
+    distances = findDistances(df, seqpairs)
+    avg_target_distance = np.mean(np.array(distances.values()))
+    for k,v in sorted(distances.items()):
+        print k,v
+    
+    seqcoords = mig.getFlaggedSeqList(df, 15, 105)
+    query = df.value[seqcoords[1][0]:seqcoords[1][1]]
+    print query.index[0], avg_target_distance
+    distances = findMatches(df, query, size=120, step=2)
+
+	print distances[distances.values<avg_target_distance].count()
+
+	
+2005-08-17 14:14:00 [0.0, 27391.0, 20526.0, 34094.0]
+2005-08-24 10:44:00 [27391.0, 0.0, 26170.0, 35545.0]
+2005-08-24 21:44:00 [20526.0, 26170.0, 0.0, 30980.0]
+2005-08-25 18:44:00 [34094.0, 35545.0, 30980.0, 0.0]
+2005-08-24 10:44:00 21838.25
+969
+Total:Target (count):  25910 4
+	   
+distances.sort_values().head()
+Out[136]: 
+2005-08-24 10:44:00       4.0
+2005-08-24 10:42:00     455.0
+2005-08-24 10:46:00    1305.0
+2005-08-24 10:40:00    3884.0
+2005-08-24 10:50:00    4282.0
+dtype: float64
+
+# we can see there is a match to the (2005-08-24 10:44:00) entry in the 
+#original target sequences (no need for a plot)
+
+distances.index.get_loc('2005-08-24 10:44:00')
+Out[137]: 9412
+
+np.corrcoef(query.values, df.value[9412:9412+121].values)
+Out[139]: 
+array([[ 1.        ,  0.25793608],
+       [ 0.25793608,  1.        ]])
+
+import scipy.spatial.distance as spd	   
+spd.correlation(query.values, df.value[9412:9412+121].values)
+Out[142]: 0.74206391548148898
+spd.correlation(query.values, query.values)
+Out[143]: 3.3306690738754696e-16
+
+spd.cosine(query.values, query.values)
+Out[145]: 0.0
+spd.cosine(query.values, df.value[9412:9412+121].values)
+Out[146]: 0.48170877094656905
+spd.cosine(query.values, df.value[9012:9012+121].values)
+Out[147]: 0.62339565448707457
+
+spd.euclidean(query.values, query.values)
+Out[148]: 0.0
+spd.euclidean(query.values, df.value[9012:9012+121].values)
+Out[149]: 5454.8649845802784
+spd.euclidean(query.values, df.value[9412:9412+121].values)
+Out[150]: 4829.7842601921675
+
+
+
+
+# get the "furthest away" sequences and lets compare that
+distances.sort_values().tail()
+Out[151]: 
+2005-08-23 08:34:00    53660.0
+2005-08-23 07:58:00    54873.0
+2005-08-23 07:46:00    56751.0
+2005-08-23 08:10:00    58820.0
+2005-08-23 08:24:00    59150.0
+dtype: float64
+
+distances.index.get_loc('2005-08-23 08:34:00')
+Out[152]: 8627
+
+np.corrcoef(query.values, df.value[other_id:other_id+121].values)
+Out[175]: 
+array([[ 1.        , -0.11801044],
+       [-0.11801044,  1.        ]])
+
+spd.correlation(query.values, df.value[other_id:other_id+121].values)
+Out[166]: 1.1180104416679564
+spd.correlation(query.values, query.values)
+Out[167]: 3.3306690738754696e-16
+spd.correlation(query.values, df.value[other_id:other_id+121].values)
+Out[168]: 1.1180104416679564
+
+spd.cosine(query.values, query.values)
+Out[169]: 0.0
+spd.cosine(query.values, df.value[other_id:other_id+121].values)
+Out[170]: 0.65549963050634774
+spd.cosine(query.values, df.value[other_id:other_id+121].values)
+Out[171]: 0.65549963050634774
+
+spd.euclidean(query.values, query.values)
+Out[172]: 0.0
+spd.euclidean(query.values, df.value[other_id:other_id+121].values)
+Out[173]: 6231.0024875616928
+spd.euclidean(query.values, df.value[other_id:other_id+121].values)
+Out[174]: 6231.0024875616928
+   
+
+   
+   
+*********************************************************************
+    df = mig.getCaseData(mig.CASE_NAMES[2])
+
+    seqcoords = mig.getFlaggedSeqList(df, 15, 105)
+    query = df.value[seqcoords[1][0]:seqcoords[1][1]]
+    print query.index[0], avg_target_distance
+    distances = findMatches(df, query, size=120, step=30)
+	
+	
+2002-06-06 14:34:00 [0.0, 29333.0, 25575.0, 29130.0, 30009.0, 25453.0, 36932.0, 45455.0, 34990.0, 28580.0, 30317.0, 41464.0, 23015.0]
+2002-06-07 15:14:00 [29333.0, 0.0, 25571.0, 25657.0, 31488.0, 25714.0, 19298.0, 68473.0, 19876.0, 28752.0, 49915.0, 37030.0, 35850.0]
+2002-06-08 17:44:00 [25575.0, 25571.0, 0.0, 20520.0, 28277.0, 26074.0, 27840.0, 56580.0, 31831.0, 23387.0, 23688.0, 36620.0, 34979.0]
+2002-06-09 13:43:00 [29130.0, 25657.0, 20520.0, 0.0, 25819.0, 30239.0, 23951.0, 53932.0, 37479.0, 22765.0, 26540.0, 32122.0, 26915.0]
+2002-06-10 16:43:00 [30009.0, 31488.0, 28277.0, 25819.0, 0.0, 28242.0, 27438.0, 54546.0, 25672.0, 24579.0, 22499.0, 33421.0, 20916.0]
+2002-06-12 14:43:00 [25453.0, 25714.0, 26074.0, 30239.0, 28242.0, 0.0, 36256.0, 42966.0, 33426.0, 30687.0, 41025.0, 35432.0, 29589.0]
+2002-06-13 23:43:00 [36932.0, 19298.0, 27840.0, 23951.0, 27438.0, 36256.0, 0.0, 73646.0, 20004.0, 30162.0, 27731.0, 30831.0, 30039.0]
+2002-06-14 15:43:00 [45455.0, 68473.0, 56580.0, 53932.0, 54546.0, 42966.0, 73646.0, 0.0, 54407.0, 55159.0, 64063.0, 56041.0, 43818.0]
+2002-06-16 22:58:00 [34990.0, 19876.0, 31831.0, 37479.0, 25672.0, 33426.0, 20004.0, 54407.0, 0.0, 34107.0, 41169.0, 29294.0, 32356.0]
+2002-06-17 19:15:00 [28580.0, 28752.0, 23387.0, 22765.0, 24579.0, 30687.0, 30162.0, 55159.0, 34107.0, 0.0, 25342.0, 33027.0, 24362.0]
+2002-06-18 19:45:00 [30317.0, 49915.0, 23688.0, 26540.0, 22499.0, 41025.0, 27731.0, 64063.0, 41169.0, 25342.0, 0.0, 35812.0, 28950.0]
+2002-06-19 15:45:00 [41464.0, 37030.0, 36620.0, 32122.0, 33421.0, 35432.0, 30831.0, 56041.0, 29294.0, 33027.0, 35812.0, 0.0, 32524.0]
+2002-06-20 16:45:00 [23015.0, 35850.0, 34979.0, 26915.0, 20916.0, 29589.0, 30039.0, 43818.0, 32356.0, 24362.0, 28950.0, 32524.0, 0.0]
+2002-06-07 15:14:00 31088.4378698
+778
+Total:Target (count):  31485 13
+
+distances.sort_values().head()
+Out[178]: 
+2002-06-07 15:30:00    2546.0
+2002-06-07 15:00:00    2737.0
+2002-06-22 05:30:00    4073.0
+2002-06-23 18:00:00    4161.0
+2002-06-18 18:30:00    4204.0
+dtype: float64
+
+other_id = distances.index.get_loc('2002-06-07 15:30:00') #closest (overlaps)
+
+np.corrcoef(query.values, df.value[other_id:other_id+121].values)
+Out[208]: 
+array([[ 1.       ,  0.0315553],
+       [ 0.0315553,  1.       ]])
+   
+	   
+import scipy.spatial.distance as spd
+
+spd.correlation(query.values, df.value[other_id:other_id+121].values)
+Out[191]: 0.96844469566209257
+spd.correlation(query.values, query.values)
+Out[192]: 6.106226635438361e-15
+spd.correlation(query.values, df.value[other_id+999:other_id+1120].values)
+Out[193]: 1.1120232185094803
+
+spd.cosine(query.values, query.values)
+Out[194]: 1.1102230246251565e-16
+spd.cosine(query.values, df.value[other_id:other_id+121].values)
+Out[195]: 0.65783181529673596
+spd.cosine(query.values, df.value[other_id+999:other_id+1120])
+Out[198]: 0.98054822208984882
+
+spd.euclidean(query.values, query.values)
+Out[199]: 0.0
+spd.euclidean(query.values, df.value[other_id:other_id+121].values)
+Out[200]: 6154.1927984098775
+spd.euclidean(query.values, df.value[other_id+999:other_id+1120].values)
+Out[201]: 2966.6470973137334
+
+
+
+**********************************************************************
+
+
+# find distances just among target sequences, then print in sorted order
+seqpairs = mig.getFlaggedSeqList(df, 15, 105)
+distances = findDistances(df, seqpairs)
+avg_target_distance = np.mean(np.array(distances.values()[0]))
+for k,v in sorted(distances.items()):
+    print k,v
+
+2005-03-08 21:49:00 [0.0, 17980.0, 14569.0, 11496.0, 17677.0, 26379.0, 23333.0]
+2005-03-12 18:15:00 [17980.0, 0.0, 21793.0, 16680.0, 22356.0, 24816.0, 20496.0]
+2005-03-15 07:45:00 [14569.0, 21793.0, 0.0, 9024.0, 10652.0, 19302.0, 12117.0]
+2005-03-17 22:45:00 [11496.0, 16680.0, 9024.0, 0.0, 15786.0, 23188.0, 16012.0]
+2005-03-18 06:29:00 [17677.0, 22356.0, 10652.0, 15786.0, 0.0, 17495.0, 13671.0]
+2005-03-19 12:00:00 [26379.0, 24816.0, 19302.0, 23188.0, 17495.0, 0.0, 18954.0]
+2005-03-21 10:15:00 [23333.0, 20496.0, 12117.0, 16012.0, 13671.0, 18954.0, 0.0]
+
+
+
+seqcoords = mig.getFlaggedSeqList(df, 15, 105)
+query = df.value[seqcoords[0][0]:seqcoords[0][1]]
+print query.index[0]
+distances = findMatches(df, query, size=120, step=25)
+
+Out[5]: 2005-03-08 21:49:00
+
+# distance query is run over whole dataset for chosen slice (query)
+# distances = findMatches(df, query, size=120, step=25)
+# distances is now a pd.Series with distances to all windows vs query 
+# avg_t_dist was the average distance to all other target labelled sequences
+print distances[distances.values<avg_target_distance].count()
+Out[6]: 363
+
+np.min([17980.0, 14569.0, 11496.0, 17677.0, 26379.0, 23333.0])
+Out[8]: 11496.0
+
+distances[distances.values<11496].count()
+Out[10]: 15
+
+distances.sort_values().head()
+Out[11]: 
+2005-03-08 22:05:00     5170.0
+2005-03-08 21:40:00     5186.0
+2005-03-15 15:45:00    10505.0
+2005-03-15 15:20:00    10790.0
+2005-03-19 22:40:00    10915.0
+dtype: float64
+
+distances.sort_values().tail()
+Out[12]: 
+2005-03-10 10:20:00    50594.0
+2005-03-08 10:50:00    52605.0
+2005-03-10 10:45:00    59673.0
+2005-03-10 09:05:00    64717.0
+2005-03-10 09:55:00    65495.0
+dtype: float64
+
+
+other_id1 = df.index.get_loc('2005-03-19 22:40:00') #closest (overlaps)
+other_id2 = df.index.get_loc('2005-03-08 22:05:00') #closest (overlaps)
+other_id3 = df.index.get_loc('2005-03-10 10:20:00')
+other_id4 = df.index.get_loc('2005-03-17 22:45:00') #closest (overlaps)
+
+
+np.corrcoef(query.values, df.value[other_id:other_id+119].values)
+Out[30]: 
+array([[ 1.        ,  0.12592535],
+       [ 0.12592535,  1.        ]])
+	   
+	   
+import scipy.spatial.distance as spd
+
+spd.correlation(query.values, query.values)
+Out[32]: 1.4432899320127035e-15
+spd.correlation(query.values, df.value[other_id:other_id+119].values)
+Out[33]: 0.87407464860530082
+spd.correlation(query.values, df.value[other_id+999:other_id+1118].values)
+Out[34]: 1.0411826975889324
+
+spd.cosine(query.values, query.values)
+Out[35]: 0.0
+spd.cosine(query.values, df.value[other_id:other_id+119].values)
+Out[36]: 0.54846732142626231
+spd.cosine(query.values, df.value[other_id+999:other_id+1118])
+Out[37]: 0.93169959820046655
+
+spd.euclidean(query.values, query.values)
+Out[41]: 0.0
+spd.euclidean(query.values, df.value[other_id:other_id+119].values)
+Out[42]: 5179.5504631193626
+spd.euclidean(query.values, df.value[other_id+999:other_id+1118].values)
+Out[43]: 3796.6788118038112
+
+
+distances.sort_values().head(15)
+Out[61]: 
+2005-03-08 22:05:00     5170.0
+2005-03-08 21:40:00     5186.0
+2005-03-15 15:45:00    10505.0
+2005-03-15 15:20:00    10790.0
+2005-03-19 22:40:00    10915.0
+2005-03-13 22:55:00    10955.0
+2005-03-17 22:20:00    11093.0
+2005-03-14 23:30:00    11116.0
+2005-03-11 00:30:00    11199.0
+2005-03-21 12:35:00    11288.0
+2005-03-20 22:50:00    11422.0
+2005-03-13 16:40:00    11442.0
+2005-03-20 23:15:00    11452.0
+2005-03-20 18:40:00    11469.0
+2005-03-09 18:05:00    11487.0
+dtype: float64
+
+#plot (with matplotlib.pyplot)
+fig, ax = plt.subplots(nrows=2, ncols=1, figsize=(10,5), sharey=True); ax[0].plot(query); ax[1].plot(df.value[other_id4:other_id4+119])
+
+
+
+**********  code snippets
+
+    import scipy.spatial.distance as spd
+
+    distances.sort_values().head()
+    distances.sort_values().tail()
+    #choose from list..
+    
+    other_id = distances.index.get_loc('2005-08-23 08:34:00')
+
+	spd.correlation(query.values, query.values)
+    spd.correlation(query.values, df.value[other_id:other_id+119].values)
+    spd.correlation(query.values, df.value[other_id+999:other_id+1118].values)
+
+    spd.cosine(query.values, query.values)
+    spd.cosine(query.values, df.value[other_id:other_id+119].values)
+    spd.cosine(query.values, df.value[other_id+999:other_id+1118])
+
+    spd.euclidean(query.values, query.values)
+    spd.euclidean(query.values, df.value[other_id:other_id+119].values)
+    spd.euclidean(query.values, df.value[other_id+999:other_id+1118].values)
+

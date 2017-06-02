@@ -1,0 +1,130 @@
+﻿
+Anfall 01
+Aasane01,  8/5, 1000	- 1400 
+Aktigraffil (excel) : 1327 – 1567 (anfall)
+
+Anfall 02
+Aasane01,  9/5, 1200	- 1600 
+Aktigraffil (excel) : 2887 –  3126 (anfall)
+
+
+Anfall 03
+Aasane01,  10/5, 1500 – 1800 
+Aktigraffil (excel) : 4507 – 4686 (anfall)
+
+Anfall 04
+Aasane01,  11/5, 1600 – 1900
+Aktigraffil (excel) : 6007 –  6186 (anfall)
+
+Anfall 05
+Aasane01,  12/5, 1400 – 1600
+Aktigraffil (excel) : 7328  –  7447 (anfall)
+
+
+***
+
+Anfall 06
+Aasane16,  8/3, 2204 – 2334 
+Aktigraffil (excel) : 731 – 850 (anfall)
+
+Anfall 07
+Aasane16,  12/3, 1830 – 1900  
+Aktigraffil (excel) : 6277 – 6306  (anfall)
+
+Anfall 08
+Aasane16,  15/3, 0800 – 1000   
+Aktigraffil (excel) : 9967 – 1086  (anfall)
+
+Anfall 09
+Aasane16,  17/3, 2300 – 2400   
+Aktigraffil (excel) : 13747– 13806  (anfall)
+
+Anfall 10
+Aasane16,  18/3, 0645 – 0745   
+Aktigraffil (excel) : 14211 – 14270  (anfall)
+
+Anfall 11
+Aasane16,  19/3, 1215 – 1515    
+Aktigraffil (excel) : 15982 – 16161  (anfall)
+
+Anfall 12
+Aasane16,  21/3, 1030 – 1100    
+Aktigraffil (excel) : 18757 - 18786  (anfall)
+
+
+***
+
+Anfall 13
+Aasane18,  17/8, 1430 – 2330     
+Aktigraffil (excel) : 8977 – 9516  (anfall)
+
+Anfall 14
+Aasane18,  24/8, 1100 – 1300     
+Aktigraffil (excel) : 18847 – 18966 (anfall)
+
+Anfall 15
+Aasane18,  24/8, 2200 – 0200 (25/8)      
+Aktigraffil (excel) : 19507 – 19746  (anfall)
+
+Anfall 16
+Aasane18,  25/8, 1900 – 0100 (26/8)      
+Aktigraffil (excel) : 20767 – 21127  (anfall)
+
+
+***
+
+Anfall 17 
+sb,  6/5, 1450 – 0050 (7/5)       
+Aktigraffil (excel) : 117 – 516  (anfall)
+
+Anfall 18
+sb,  7/5, 1530 – 1830        
+Aktigraffil (excel) : 1597 – 1776  (anfall)
+
+Anfall 19
+sb,  8/5, 1800 – 2400        
+Aktigraffil (excel) : 3187 – 3546  (anfall)
+
+Anfall 20
+sb,  9/5, 1400 – 2400        
+Aktigraffil (excel) : 4386 – 4985  (anfall)
+A: 14:21, 
+
+Anfall 21
+sb, 10/5, 1700 – 0100  (11/5)     
+Aktigraffil (excel) : 6006 – 6485  (anfall)
+
+Anfall 22
+sb, 12/5, 1400 – 1900     
+Aktigraffil (excel) : 8766 – 9065  (anfall)
+A: 12:42, 16:54, 17:42
+
+
+Anfall 23
+sb, 13/5, 2300 – 0100 (14/5)     
+Aktigraffil (excel) : 10746 – 10865  (anfall)
+
+Anfall 24
+sb, 14/5, 1500 – 2300        
+Aktigraffil (excel) : 11706 – 12185  (anfall)
+
+Anfall 25
+sb, 16/5,  2215 - 0215 (17/5)      
+Aktigraffil (excel) : 15021 – 15260  (anfall)
+
+Anfall 26 
+sb, 17/5,  1930 - 2330       
+Aktigraffil (excel) : 16238 – 16477  (anfall)
+
+Anfall 27 
+sb, 18/5,  2000 – 0200 (19/5)        
+Aktigraffil (excel) : 17708  – 18068  (anfall)
+
+Anfall 28 
+sb, 19/5,  1600  – 2200         
+Aktigraffil (excel) : 18908  – 19268  (anfall)
+
+Anfall 29 
+sb, 20/5,  1700  – 2400         
+Aktigraffil (excel) : 20408   – 20828  (anfall)
+

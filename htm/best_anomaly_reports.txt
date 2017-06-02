@@ -1,0 +1,200 @@
+**********************
+anomaly_count_stats_mix:
+
+
+
+[Run, ID, Accuracy, Precision, Recall, Prevalence] :    Aggregation: False
+Best raw anomaly accuracy score:  0.9998
+  in line:  ['2017-01-05 21:18', 'stm_aasane01_03', 0.9998, 0.0, 0.0, 0.00013, False]
+Best raw anomaly precision score:  0.167
+  in line:  ['2017-04-09 14:50', 'stm_aasane16', 0.9986, 0.167, 0.857, 0.00033, False]
+Best raw anomaly recall score:  1.0
+  in line:  ['2017-01-03 15:09', 'stm_aasane01_03', 0.984, 0.07, 1.0, 0.00013, False]
+Average before:after ratio: 0.66
+Number of ignored results:  66
+Done: summary_scoretype=1 aggregation=False
+
+
+[Run, ID, Accuracy, Precision, Recall, Prevalence] :    Aggregation: False
+Best likelihood anomaly accuracy score:  0.9998
+  in line:  ['2017-01-04 18:44', 'stm_aasane18', 0.9998, 0.0, 0.0, 0.00016, False]
+Best likelihood anomaly precision score:  0.3
+  in line:  ['2017-01-04 18:33', 'stm_aasane16', 0.9997, 0.3, 0.5, 0.00028, False]
+Best likelihood anomaly recall score:  1.0
+  in line:  ['2017-01-03 15:09', 'stm_aasane01_03', 0.9982, 0.109, 1.0, 0.00013, False]
+Average before:after ratio: 0.8
+Number of ignored results:  72
+Done: summary_scoretype=2 aggregation=False
+
+
+[Run, ID, Accuracy, Precision, Recall, Prevalence] :    Aggregation: True
+Best raw anomaly accuracy score:  0.9998
+  in line:  ['2017-01-06 15:26', 'stm_aasane18', 0.9998, 0.0, 0.0, 0.00016, False]
+Best raw anomaly precision score:  0.452
+  in line:  ['2017-01-05 14:09', 'stm_sb', 0.9994, 0.452, 1.0, 0.00033, False]
+Best raw anomaly recall score:  1.0
+  in line:  ['2017-01-05 11:32', 'stm_aasane01_03', 0.9987, 0.171, 1.0, 0.00013, False]
+Average before:after ratio: 0.55
+Number of ignored results:  121
+Done: summary_scoretype=1 aggregation=True
+
+
+[Run, ID, Accuracy, Precision, Recall, Prevalence] :    Aggregation: True
+Best likelihood anomaly accuracy score:  0.9998
+  in line:  ['2017-01-05 14:22', 'stm_aasane18', 0.9998, 0.0, 0.0, 0.00016, False]
+Best likelihood anomaly precision score:  0.714
+  in line:  ['2017-02-04 19:28', 'stm_aasane01_03', 0.9998, 0.714, 1.0, 0.00013, False]
+Best likelihood anomaly recall score:  1.0
+  in line:  ['2017-01-29 12:57', 'stm_aasane01_03', 0.9996, 0.5, 1.0, 0.00013, False]
+Average before:after ratio: 0.8
+Number of ignored results:  194
+Done: summary_scoretype=2 aggregation=True
+
+
+**************************
+anomaly_count_stats_new:
+
+
+[Run, ID, Accuracy, Precision, Recall, Prevalence] :    Aggregation: False
+Best raw anomaly accuracy score:  0.9998
+  in line:  ['2017-04-10 12:20', 'stm_aasane18', 0.9998, 0.0, 0.0, 0.00016, True]
+Best raw anomaly precision score:  0.308
+  in line:  ['2017-04-10 09:20', 'stm_aasane16', 0.9991, 0.308, 0.5, 0.00028, True]
+Best raw anomaly recall score:  1.0
+  in line:  ['2017-04-10 10:17', 'stm_aasane18', 0.9878, 0.019, 1.0, 0.00016, True]
+Average before:after ratio: 0.92
+Number of ignored results:  37
+Done: summary_scoretype=1 aggregation=False
+
+
+[Run, ID, Accuracy, Precision, Recall, Prevalence] :    Aggregation: False
+Best likelihood anomaly accuracy score:  0.9998
+  in line:  ['2017-04-10 23:53', 'stm_aasane01_03', 0.9998, 0.0, 0.0, 0.00013, True]
+Best likelihood anomaly precision score:  0.394
+  in line:  ['2017-05-06 03:06', 'stm_aasane16', 0.9991, 0.394, 0.5, 0.00028, True]
+Best likelihood anomaly recall score:  1.0
+  in line:  ['2017-04-10 09:42', 'stm_sb', 0.9969, 0.096, 1.0, 0.00033, True]
+Average before:after ratio: 0.71
+Number of ignored results:  39
+Done: summary_scoretype=2 aggregation=False
+
+
+[Run, ID, Accuracy, Precision, Recall, Prevalence] :    Aggregation: False
+Best logLikelihood anomaly accuracy score:  0.9998
+  in line:  ['2017-04-10 14:50', 'stm_aasane01_03', 0.9998, 0.375, 1.0, 0.00013, True]
+Best logLikelihood anomaly precision score:  0.375
+  in line:  ['2017-04-10 14:50', 'stm_aasane01_03', 0.9998, 0.375, 1.0, 0.00013, True]
+Best logLikelihood anomaly recall score:  1.0
+  in line:  ['2017-04-10 13:19', 'stm_aasane01_03', 0.9993, 0.211, 1.0, 0.00013, True]
+Average before:after ratio: 0.76
+Number of ignored results:  53
+Done: summary_scoretype=3 aggregation=False
+
+
+[Run, ID, Accuracy, Precision, Recall, Prevalence] :    Aggregation: True
+Best raw anomaly accuracy score:  0.9994
+  in line:  ['2017-05-07 21:19', 'stm_sb', 0.9994, 0.0, 0.0, 0.00053, True]
+Best raw anomaly precision score:  0.185
+  in line:  ['2017-05-09 22:14', 'stm_aasane01_03', 0.9921, 0.185, 0.333, 0.00044, True]
+Best raw anomaly recall score:  1.0
+  in line:  ['2017-05-09 02:40', 'stm_aasane01_03', 0.9742, 0.059, 1.0, 0.00044, True]
+Average before:after ratio: 1.12
+Number of ignored results:  52
+Done: summary_scoretype=1 aggregation=True
+
+
+[Run, ID, Accuracy, Precision, Recall, Prevalence] :    Aggregation: True
+Best likelihood anomaly accuracy score:  0.9994
+  in line:  ['2017-05-07 22:30', 'stm_sb', 0.9994, 0.0, 0.0, 0.00053, True]
+Best likelihood anomaly precision score:  0.5
+  in line:  ['2017-05-09 03:00', 'stm_aasane01_03', 0.9991, 0.5, 0.333, 0.00044, True]
+Best likelihood anomaly recall score:  0.5
+  in line:  ['2017-05-10 00:53', 'stm_aasane18', 0.9946, 0.109, 0.5, 0.00052, True]
+Average before:after ratio: 1.3
+Number of ignored results:  68
+Done: summary_scoretype=2 aggregation=True
+
+
+[Run, ID, Accuracy, Precision, Recall, Prevalence] :    Aggregation: True
+Best logLikelihood anomaly accuracy score:  0.9995
+  in line:  ['2017-05-07 21:35', 'stm_aasane18', 0.9995, 0.0, 0.0, 0.00039, True]
+Best logLikelihood anomaly precision score:  0.333
+  in line:  ['2017-05-08 22:59', 'stm_aasane01_03', 0.9994, 0.333, 0.333, 0.00044, True]
+Best logLikelihood anomaly recall score:  0.333
+  in line:  ['2017-05-08 22:59', 'stm_aasane01_03', 0.9994, 0.333, 0.333, 0.00044, True]
+Average before:after ratio: 1.11
+Number of ignored results:  110
+Done: summary_scoretype=3 aggregation=True
+
+
+
+****************************************
+anomaly_count_stats_delta.csv:
+
+
+ [Run, ID, Accuracy, Precision, Recall, Prevalence] :    Aggregation: False
+Best raw anomaly accuracy score:  0.9998
+  in line:  ['2017-05-01 23:19', 'stm_aasane01_03', 0.9998, 0.167, 0.333, 0.00013, True]
+Best raw anomaly precision score:  0.167
+  in line:  ['2017-05-01 23:19', 'stm_aasane01_03', 0.9998, 0.167, 0.333, 0.00013, True]
+Best raw anomaly recall score:  1.0
+  in line:  ['2017-04-27 22:18', 'stm_aasane16', 0.9691, 0.064, 1.0, 0.00028, True]
+Average before:after ratio: 0.89
+Number of ignored results:  12
+Done: summary_scoretype=1 aggregation=False
+
+
+[Run, ID, Accuracy, Precision, Recall, Prevalence] :    Aggregation: False
+Best likelihood anomaly accuracy score:  0.9998
+  in line:  ['2017-04-27 22:28', 'stm_aasane18', 0.9998, 0.0, 0.0, 0.00016, True]
+Best likelihood anomaly precision score:  0.52
+  in line:  ['2017-05-03 02:58', 'stm_aasane16', 0.9994, 0.52, 0.5, 0.00028, True]
+Best likelihood anomaly recall score:  0.5
+  in line:  ['2017-04-30 05:40', 'stm_aasane16', 0.9988, 0.194, 0.5, 0.00028, True]
+Average before:after ratio: 0.98
+Number of ignored results:  30
+Done: summary_scoretype=2 aggregation=False
+
+
+
+*****************************************
+anomaly_count_stats_agg_delta.csv:
+
+
+ [Run, ID, Accuracy, Precision, Recall, Prevalence] :    Aggregation: True
+Best raw anomaly accuracy score:  0.9994
+  in line:  ['2017-05-11 21:16', 'stm_aasane01_03', 0.9994, 0.0, 0.0, 0.00044, True]
+Best raw anomaly precision score:  0.184
+  in line:  ['2017-05-11 22:49', 'stm_aasane16', 0.9951, 0.184, 0.667, 0.00094, True]
+Best raw anomaly recall score:  0.727
+  in line:  ['2017-05-12 08:29', 'stm_sb', 0.9855, 0.098, 0.727, 0.00116, True]
+Average before:after ratio: 1.37
+Number of ignored results:  3
+Done: summary_scoretype=1 aggregation=True
+
+
+[Run, ID, Accuracy, Precision, Recall, Prevalence] :    Aggregation: True
+Best likelihood anomaly accuracy score:  0.9991
+  in line:  ['2017-05-11 21:55', 'stm_aasane18', 0.9991, 0.0, 0.0, 0.00052, True]
+Best likelihood anomaly precision score:  0.257
+  in line:  ['2017-05-12 08:08', 'stm_aasane01_03', 0.9961, 0.257, 0.333, 0.00044, True]
+Best likelihood anomaly recall score:  0.364
+  in line:  ['2017-05-11 22:36', 'stm_sb', 0.9942, 0.247, 0.364, 0.00116, True]
+Average before:after ratio: 1.43
+Number of ignored results:  0
+Done: summary_scoretype=2 aggregation=True
+
+
+[Run, ID, Accuracy, Precision, Recall, Prevalence] :    Aggregation: True
+Best logLikelihood anomaly accuracy score:  0.9994
+  in line:  ['2017-05-11 20:01', 'stm_aasane01_03', 0.9994, 0.0, 0.0, 0.00044, True]
+Best logLikelihood anomaly precision score:  0.429
+  in line:  ['2017-05-11 20:53', 'stm_aasane01_03', 0.9994, 0.429, 0.333, 0.00044, True]
+Best logLikelihood anomaly recall score:  0.333
+  in line:  ['2017-05-11 19:52', 'stm_aasane01_03', 0.9993, 0.167, 0.333, 0.00044, True]
+Average before:after ratio: 1.27
+Number of ignored results:  8
+Done: summary_scoretype=3 aggregation=True
+
+
+

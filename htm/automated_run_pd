@@ -1,0 +1,7 @@
+#!/bin/bash
+clear
+
+echo "Running batch HTM analysis with aggregation step=" "$1" "  function=" "$2"
+
+python activity_experiment_pd.py -s 4320 -g "$1" -t "$2"
+
